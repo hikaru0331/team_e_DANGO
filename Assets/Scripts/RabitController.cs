@@ -7,6 +7,10 @@ public class RabitController : MonoBehaviour
     public GameObject rabit;
     public float moveSpeed;
 
+    public GameObject dango;
+    private float timer;
+    public float interval;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,17 +20,25 @@ public class RabitController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+
+        if (timer >= interval)
+        {
+            timer = 0;
+
+            Instantiate(dango, this.gameObject.transform.position, Quaternion.identity);
+           
+        }
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 8)
         {
             rabit.transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -8)
         {
             rabit.transform.position += Vector3.left * moveSpeed * Time.deltaTime;
         }
