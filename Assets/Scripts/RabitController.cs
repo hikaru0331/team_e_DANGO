@@ -7,6 +7,8 @@ public class RabitController : MonoBehaviour
     public GameObject rabit;
     public float moveSpeed;
 
+    public GameObject generatePosition;
+
     public GameObject dango;
     private float timer;
     public float interval;
@@ -26,7 +28,7 @@ public class RabitController : MonoBehaviour
         {
             timer = 0;
 
-            Instantiate(dango, this.gameObject.transform.position, Quaternion.identity);
+            Instantiate(dango, generatePosition.gameObject.transform.position, Quaternion.identity);
            
         }
     }
