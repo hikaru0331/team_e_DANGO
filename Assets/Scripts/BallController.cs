@@ -7,10 +7,10 @@ public class BallController : MonoBehaviour
     public GameObject dangoG;
     public GameObject dangoR;
     public GameObject dangoW;
-    public float fallSpeed = 5f;
-    public float intervalG = 1f;
-    public float intervalR = 2f;
-    public float intervalW = 3f;
+    public float fallSpeed = 5.0f;
+    public float intervalG = 1.0f;
+    public float intervalR = 2.0f;
+    public float intervalW = 3.0f;
     private float timer;
 
     // Start is called before the first frame update
@@ -30,7 +30,8 @@ public class BallController : MonoBehaviour
         {
 
             //dangoG
-            Vector3 positionG = new Vector3(Random.Range(-9f, 9f), 5f, 0f);
+            Vector3 positionG = new Vector3(Random.Range(-5f, 5f), 5f, 0f);
+            //Prefab化回避用35&37
             GameObject ballG = Instantiate(dangoG, positionG, Quaternion.identity);
 
             Rigidbody2D ballGRigidbody = ballG.GetComponent<Rigidbody2D>();
@@ -38,13 +39,13 @@ public class BallController : MonoBehaviour
             ballGRigidbody.velocity = new Vector2(0f, -fallSpeed);
 
             //インターバルの更新
-            intervalG += 3f;
+            intervalG += 3.0f;
         }
 
         if (timer >= intervalR)
         {
             //dangoR
-            Vector3 positionR = new Vector3(Random.Range(-9f, 9f), 5f, 0f);
+            Vector3 positionR = new Vector3(Random.Range(-5f, 5f), 5f, 0f);
             GameObject ballR = Instantiate(dangoR, positionR, Quaternion.identity);
 
             Rigidbody2D ballRRigidbody = ballR.GetComponent<Rigidbody2D>();
@@ -52,14 +53,14 @@ public class BallController : MonoBehaviour
             ballRRigidbody.velocity = new Vector2(0f, -fallSpeed);
 
             //インターバルの更新
-            intervalR += 3f;
+            intervalR += 3.0f;
         }
 
         if (timer >= intervalW)
         {
 
             //dangoW
-            Vector3 positionW = new Vector3(Random.Range(-9f, 9f), 5f, 0f);
+            Vector3 positionW = new Vector3(Random.Range(-5f, 5f), 5f, 0f);
             GameObject ballW = Instantiate(dangoW, positionW, Quaternion.identity);
 
             Rigidbody2D ballWRigidbody = ballW.GetComponent<Rigidbody2D>();
@@ -67,7 +68,7 @@ public class BallController : MonoBehaviour
             ballWRigidbody.velocity = new Vector2(0f, -fallSpeed);
 
             //インターバルの更新
-            intervalW += 3f;
+            intervalW += 3.0f;
         }
 
     }
