@@ -13,6 +13,18 @@ public class Image1Replace : MonoBehaviour
     public void image1ToG()
     {
         image1.sprite = imageG;
-        Debug.Log("imagechange");
+        Debug.Log("image1changeG");
+    }
+
+    public void image1ToR()
+    {
+        image1.sprite = imageR;
+        Debug.Log("image1changeR");
+    }
+
+    public void image1ToW()
+    {
+        image1.sprite = imageW;
+        Debug.Log("image1changeW");
     }
 }
