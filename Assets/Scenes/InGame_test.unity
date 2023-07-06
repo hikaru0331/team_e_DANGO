@@ -203,7 +203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474125243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.14, y: 3.72, z: 0}
+  m_LocalPosition: {x: 5.7, y: 3.72, z: 0}
   m_LocalScale: {x: 1.4330387, y: 1.4330387, z: 1.4330387}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -252,7 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3398f00636f36cf4e8a8d46eff628183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rabitSprite: {fileID: 0}
   idleSprite: {fileID: 21300000, guid: da88fc7684d6c114c898f85b50f21998, type: 3}
   shotSprite: {fileID: 21300000, guid: f5aaaa5b25eefbc44b37b6d511c041fd, type: 3}
 --- !u!1 &505347254
