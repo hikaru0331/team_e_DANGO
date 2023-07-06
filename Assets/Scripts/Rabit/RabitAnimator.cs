@@ -5,7 +5,7 @@ using UnityEngine;
 public class RabitAnimator : MonoBehaviour
 {
     //アニメーションに関する変数
-    public SpriteRenderer rabitSprite;
+    [System.NonSerialized] public SpriteRenderer rabitSprite;
     public Sprite idleSprite;
     public Sprite shotSprite;
 

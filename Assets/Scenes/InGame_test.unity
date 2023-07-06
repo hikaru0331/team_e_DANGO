@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3398f00636f36cf4e8a8d46eff628183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rabitSprite: {fileID: 474125244}
+  rabitSprite: {fileID: 0}
   idleSprite: {fileID: 21300000, guid: da88fc7684d6c114c898f85b50f21998, type: 3}
   shotSprite: {fileID: 21300000, guid: f5aaaa5b25eefbc44b37b6d511c041fd, type: 3}
 --- !u!1 &505347254
