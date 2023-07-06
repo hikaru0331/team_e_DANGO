@@ -12,12 +12,10 @@ public class RabitController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 8)
         {
-            Debug.Log("âEñÓàÛ");
             rabit.transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -8)
         {
-            Debug.Log("ç∂ñÓàÛ");
             rabit.transform.position += Vector3.left * moveSpeed * Time.deltaTime;
         }
     }
