@@ -31,10 +31,14 @@ public class DangoGenerator : MonoBehaviour
         {
             timer = 0;
 
-            //rabitSprite.sprite = shotSprite;
+            //RabitAnimatorクラスにあるSpriteRendererコンポーネントにアクセス
+            //スプライトをRabitAnimatorクラスのshotSpriteに変更
+            rabitAnimator.rabitSprite.sprite = rabitAnimator.shotSprite;
+            //だんご生成
             Instantiate(dango, generatePosition.gameObject.transform.position, Quaternion.identity);
 
-            Invoke("SpriteResetter", 0.2f);
+            //スプライトをRabitAnimatorクラスのidleSpriteに戻す処理を呼び出す
+            rabitAnimator.Invoke("SpriteResetter", 0.2f);
         }
     }
 }

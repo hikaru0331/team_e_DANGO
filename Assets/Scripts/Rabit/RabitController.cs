@@ -7,20 +7,7 @@ public class RabitController : MonoBehaviour
     //このオブジェクトを入れる変数と移動速度の変数
     public GameObject rabit;
     public float moveSpeed;
-       
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+ 
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 10)

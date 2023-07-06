@@ -5,9 +5,9 @@ using UnityEngine;
 public class RabitAnimator : MonoBehaviour
 {
     //アニメーションに関する変数
-    public static SpriteRenderer rabitSprite;
-    [SerializeField] private Sprite idleSprite;
-    [SerializeField] private Sprite shotSprite;
+    public SpriteRenderer rabitSprite;
+    public Sprite idleSprite;
+    public Sprite shotSprite;
 
     // Start is called before the first frame update
     void Start()
