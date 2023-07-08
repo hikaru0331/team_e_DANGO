@@ -1,30 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class ScoreManager : MonoBehaviour
 {
     public Image[] images;
-    Image1Replace a;
-    Image2Replace b;
-    Image3Replace c;
-    bool[] flags;
+    public Image1Replace a;
+    public Image2Replace b;
+    public Image3Replace c;
+    private bool[] flags;
 
     public TMP_Text ScoreText;
     public TMP_Text TotalScoreText;
-    int score = 0;
-    int totalScore = 0;
+    private float score = 0;
+    private float totalScore = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         foreach (var image in images)
-    {
-        image.enabled = false;
-    }
+        {
+            image.color = new Color(image.color.r, image.color.g, image.color.b, 0f);
+        }
 
         a = GetComponentInChildren<Image1Replace>();
         b = GetComponentInChildren<Image2Replace>();
@@ -39,11 +39,14 @@ public class ScoreManager : MonoBehaviour
         // 団子完成後初期化
         if (!flags[2])
         {
+            // totalScore更新
             totalScore += score;
             TotalScoreText.text = string.Format("Score:{0}" , totalScore);
+
+            // 団子初期化
             foreach (var image in images)
             {
-                image.enabled = false;
+                image.DOFade(0.0f, 0.80f);
             }
 
             for (int i = 0; i < 3; i++)
@@ -51,11 +54,12 @@ public class ScoreManager : MonoBehaviour
                 flags[i] = true;
             }
 
+            // score初期化
             score = 0;
         }
     }
 
-    private async void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         // 最初の衝突時の処理
         if (flags[0])
@@ -160,7 +164,7 @@ public class ScoreManager : MonoBehaviour
 
     private void ShowDangoImage(int index, int imageIndex)
     {
-        images[index].enabled = true;
+        images[index].color = Color.white;
 
         switch (index)
         {
@@ -188,5 +192,29 @@ public class ScoreManager : MonoBehaviour
                 score += 50;
                 break;
         }
+
+        // 三色団子の場合はスコアを2倍にする
+        if (CheckTriColorDango())
+        {
+            score *= 2;
+        }
+        // 単色団子の場合はスコアを1.5倍にする
+        else if (CheckMonoColorDango())
+        {
+            score *= 1.5f;
+        }
     }
+
+    private bool CheckTriColorDango()
+    {
+        // 三色団子の場合はtrueを返す
+        return (a.GetCurrentImage() != b.GetCurrentImage() && a.GetCurrentImage() != c.GetCurrentImage() && b.GetCurrentImage() != c.GetCurrentImage());
+    }
+
+    private bool CheckMonoColorDango()
+    {
+        // 単色団子の場合はtrueを返す
+        return (a.GetCurrentImage() == b.GetCurrentImage() && a.GetCurrentImage() == c.GetCurrentImage());
+    }
+
 }
