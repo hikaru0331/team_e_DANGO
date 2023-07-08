@@ -5,26 +5,19 @@ using UnityEngine.UI;
 
 public class Image1Replace : MonoBehaviour
 {
-    public Sprite imageG;
-    public Sprite imageR;
-    public Sprite imageW;
+    public Sprite[] images;
     public Image image1;
+    private int currentImageIndex = 0;
     
-    public void image1ToG()
+    public void SetImage(int index)
     {
-        image1.sprite = imageG;
-        Debug.Log("image1changeG");
+        // G,R,W,G_rabit の順で入れといてね
+        image1.sprite = images[index];
+        currentImageIndex = index;
     }
 
-    public void image1ToR()
+    public int GetCurrentImage()
     {
-        image1.sprite = imageR;
-        Debug.Log("image1changeR");
-    }
-
-    public void image1ToW()
-    {
-        image1.sprite = imageW;
-        Debug.Log("image1changeW");
+        return currentImageIndex;
     }
 }
