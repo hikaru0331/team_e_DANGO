@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generatePosition: {fileID: 505347254}
-  dango: {fileID: 6298181571724129431, guid: 6d6016baf00204d4a9fbbcf16d4634d2, type: 3}
+  dango: {fileID: 4762400919682646841, guid: b08c81c4a575fae49b82046e9a681418, type: 3}
   interval: 1
 --- !u!114 &474125248
 MonoBehaviour:
@@ -453,7 +453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbd9ed63daf0ff4bbd90f933575bc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dangoSprite: {fileID: 0}
 --- !u!1 &1507199349
 GameObject:
   m_ObjectHideFlags: 0

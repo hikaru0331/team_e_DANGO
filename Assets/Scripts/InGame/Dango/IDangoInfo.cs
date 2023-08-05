@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IDangoInfo
 {
     string Name { get; }
-    //Sprite Sprite { get; }
+    Sprite Sprite { get; set; }
     string Color { get; }
     string Attribute { get; }
 

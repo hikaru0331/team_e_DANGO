@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class DangoRPoison : MonoBehaviour, IDangoInfo
 {
+    private SpriteRenderer spriteRenderer;
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        Sprite = spriteRenderer.sprite;
+    }
+
     public string Name { get; } = "DangoR_poison";
-    //public Sprite Sprite { get; } = null;
+    public Sprite Sprite { get; set; } = null;
     public string Color { get; } = "Red";
     public string Attribute { get; } = "Poison";
 

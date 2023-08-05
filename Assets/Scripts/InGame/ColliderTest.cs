@@ -6,7 +6,7 @@ using UnityEngine;
 public class ColliderTest : MonoBehaviour
 {
     private int score;
-    public Sprite dangoSprite;
+    [System.NonSerialized] public Sprite dangoSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -28,19 +28,24 @@ public class ColliderTest : MonoBehaviour
 
         if (dangoInfo != null)
         {
+            //ダンゴに格納されているスコア情報を取得して加算する処理
             score += dangoInfo.Point;
-            Debug.Log(score); 
+            Debug.Log(score);
+
+            //ゴールにダンゴが刺される処理
+            //触れてきたオブジェクトのSpriteの情報を取得→ゴールのSpriteに代入
+            //ここでは簡易化のために串のSpriteそのものをダンゴに変更している
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = dangoInfo.Sprite;
+
+            //毒ダンゴだったときにゲームオーバーにする処理
+            if (dangoInfo.Attribute == "Poison")
+            {
+                Debug.Log("GameOver");
+            }
+
             Destroy(collision.gameObject);
         }
-
-        //ゴールにダンゴが刺される処理
-        //触れてきたオブジェクトのSpriteの情報を取得→ゴールのSpriteに代入
-        //ここでは簡易化のために串のSpriteそのものをダンゴに変更している
-        SpriteRenderer spriteRenderer = collision.gameObject.GetComponent<SpriteRenderer>();
-        dangoSprite = spriteRenderer.sprite;
         
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = dangoSprite;
-
     }
 
 }
