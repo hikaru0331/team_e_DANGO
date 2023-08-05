@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6934561249029273040}
   - component: {fileID: 4414615117699381241}
   - component: {fileID: 5955850690964089748}
+  - component: {fileID: 8140589117613684229}
   m_Layer: 0
   m_Name: dangoG_rabit
   m_TagString: Untagged
@@ -123,3 +124,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.46998572
+--- !u!114 &8140589117613684229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760981914773447314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477939949468804abbfc5a90134a085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

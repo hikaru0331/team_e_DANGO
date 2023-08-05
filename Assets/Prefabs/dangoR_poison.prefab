@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 295935887315083246}
   - component: {fileID: 4560738671697380126}
   - component: {fileID: 2894774852229332832}
+  - component: {fileID: 3298106694995875036}
   m_Layer: 0
   m_Name: dangoR_poison
   m_TagString: Untagged
@@ -123,3 +124,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.020779073}
   serializedVersion: 2
   m_Radius: 0.46998572
+--- !u!114 &3298106694995875036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762400919682646841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff6ced00c866634e82622d8374f1ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
