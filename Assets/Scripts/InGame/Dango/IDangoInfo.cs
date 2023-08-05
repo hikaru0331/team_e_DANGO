@@ -4,10 +4,10 @@ using UnityEngine;
 
 public interface IDangoInfo
 {
-    //string Name { get; }
+    string Name { get; }
     //Sprite Sprite { get; }
-    //string Color { get; }
-    //string Attribute { get; }
+    string Color { get; }
+    string Attribute { get; }
 
 
     int Point { get; set; }
