@@ -11,6 +11,7 @@ public class DangoGenerator : MonoBehaviour
     public GameObject dango;
     private float timer;
     public float interval;
+    private GameObject generatedDango;
 
     //RabitAnimatorクラスの取得
     RabitAnimator rabitAnimator;
@@ -35,7 +36,7 @@ public class DangoGenerator : MonoBehaviour
             //スプライトをRabitAnimatorクラスのshotSpriteに変更
             rabitAnimator.rabitSprite.sprite = rabitAnimator.shotSprite;
             //だんご生成
-            Instantiate(dango, generatePosition.gameObject.transform.position, Quaternion.identity);
+            generatedDango = Instantiate(dango, generatePosition.gameObject.transform.position, Quaternion.identity);
 
             //スプライトをRabitAnimatorクラスのidleSpriteに戻す処理を呼び出す
             rabitAnimator.Invoke("SpriteResetter", 0.2f);
