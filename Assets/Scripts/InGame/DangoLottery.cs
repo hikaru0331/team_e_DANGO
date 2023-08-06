@@ -4,80 +4,75 @@ using UnityEngine;
 
 public class DangoLottery : MonoBehaviour
 {
-    //色の名前と重みを入れる辞書型変数
-    public Dictionary<string, float> colorList;
-    //色の抽選に使う重みの総和
-    private float colorTotalWeight;
+    private Dictionary<GameObject, float> probability;
+    public GameObject[] dangos;
 
-    //属性の名前と重みを入れる辞書型変数
-    public Dictionary<string, float> attributeList;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        InitializeDicts();
-        ColorWeightCalculator();
+        InitializeDictionary();
     }
 
-    //各辞書の初期化
-    private void InitializeDicts()
+    GameObject ChooseDango()
     {
-        colorList = new Dictionary<string, float>
-        {
-            { "green", 1.0f },
-            { "red", 1.0f },
-            { "white", 1.0f }
-        };
+        // 確率の合計値を格納
+        float total = 0;
 
-        attributeList = new Dictionary<string, float>
+        // 敵ドロップ用の辞書からドロップ率を合計する
+        foreach (KeyValuePair<GameObject, float> elem in probability)
         {
-            { "normal", 5.0f },
-            { "poison", 2.0f },
-            { "rabit", 3.0f }
-        };
-    }
-
-    //色の抽選にかかる重みの総和計算
-    public void ColorWeightCalculator()
-    {
-        // 重みの総和計算
-        foreach (float value in colorList.Values)
-        {
-            colorTotalWeight += value;
+            total += elem.Value;
         }
-    }
 
-    public string ChooseColor()
-    {
-        // 0～重みの総和の範囲の乱数値取得
-        float randomPoint = Random.Range(0.0f, colorTotalWeight);
+        // Random.valueでは0から1までのfloat値を返すので
+        // そこにドロップ率の合計を掛ける
+        float randomPoint = Random.value * total;
 
-        // 乱数値が属する要素を先頭から順に選択
-        var currentWeight = 0f;
-
-        foreach (var value in colorList)
+        // randomPointの位置に該当するキーを返す
+        foreach (KeyValuePair<GameObject, float> elem in probability)
         {
-            currentWeight += value.Value;
-
-            // 乱数値が現在要素の範囲内かチェック
-            if (randomPoint < currentWeight)
+            if (randomPoint < elem.Value)
             {
-                return value.Key;
+                return elem.Key;
+            }
+            else
+            {
+                randomPoint -= elem.Value;
             }
         }
-
-        // 乱数値が重みの総和以上なら末尾要素とする
-        return "colorList.Count - 1";
+        return null;
     }
 
-    // Update is called once per frame
-    private void Update()
+    //通常状態の発生確率を辞書に定義
+    public void InitializeDictionary()
     {
-        // スペースキーを押している間、選択要素を出力し続ける
-        if (Input.GetKey(KeyCode.Space))
-        {
-            var index = ChooseColor();
-            Debug.Log($"抽選された要素 : {index}");
-        }
+        probability = new Dictionary<GameObject, float>();
+        probability.Add(dangos[0], 20.0f);
+        probability.Add(dangos[1], 3.3f);
+        probability.Add(dangos[2], 10.0f);
+
+        probability.Add(dangos[3], 20.0f);
+        probability.Add(dangos[4], 3.3f);
+        probability.Add(dangos[5], 10.0f);
+
+        probability.Add(dangos[6], 20.0f);
+        probability.Add(dangos[7], 3.3f);
+        probability.Add(dangos[8], 10.0f);
+    }
+
+    //フィーバー状態の発生確率を辞書に定義
+    public void FeverDictionary()
+    {
+        probability = new Dictionary<GameObject, float>();
+        probability.Add(dangos[0], 0.0f);
+        probability.Add(dangos[1], 0.0f);
+        probability.Add(dangos[2], 33.3f);
+
+        probability.Add(dangos[3], 0.0f);
+        probability.Add(dangos[4], 0.0f);
+        probability.Add(dangos[5], 33.3f);
+            
+        probability.Add(dangos[6], 0.0f);
+        probability.Add(dangos[7], 0.0f);
+        probability.Add(dangos[8], 33.3f);
     }
 }

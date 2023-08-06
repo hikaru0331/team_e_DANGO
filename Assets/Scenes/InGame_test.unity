@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generatePosition: {fileID: 505347254}
-  dango: {fileID: 4762400919682646841, guid: b08c81c4a575fae49b82046e9a681418, type: 3}
+  dango: {fileID: 7760981914773447314, guid: 09113927703af634794b23ead994d20c, type: 3}
   interval: 1
 --- !u!114 &474125248
 MonoBehaviour:
@@ -314,6 +314,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07eb5fd51f413c4a9abc07656eaa666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dangos:
+  - {fileID: 712381902974572076, guid: 929120574f0aca04cb6e4f718a3be2d7, type: 3}
+  - {fileID: 3181870368633781949, guid: bd9aba958612b744892d6ce9bc31f18e, type: 3}
+  - {fileID: 7760981914773447314, guid: 09113927703af634794b23ead994d20c, type: 3}
+  - {fileID: 3607757739569394445, guid: f6790ac8acac06844beda3d2f8e9cb2d, type: 3}
+  - {fileID: 4762400919682646841, guid: b08c81c4a575fae49b82046e9a681418, type: 3}
+  - {fileID: 8181003123200774388, guid: 06eb13868fb944c4f8b4641887945dcc, type: 3}
+  - {fileID: 2230884448124423551, guid: e3c9d8b7d9308f9488616e089321bc03, type: 3}
+  - {fileID: 3438959018606692444, guid: 15de846c2a766c44c9a00129286491a5, type: 3}
+  - {fileID: 6298181571724129431, guid: 6d6016baf00204d4a9fbbcf16d4634d2, type: 3}
 --- !u!4 &518724360
 Transform:
   m_ObjectHideFlags: 0
