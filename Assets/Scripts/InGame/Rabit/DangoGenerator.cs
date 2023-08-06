@@ -17,6 +17,7 @@ public class DangoGenerator : MonoBehaviour
     RabitAnimator rabitAnimator;
 
     //DangoLotteryƒNƒ‰ƒX‚ÌŽæ“¾
+    public GameObject dangoLotteryObj;
     DangoLottery dangoLottery;
 
     // Start is called before the first frame update
@@ -24,7 +25,7 @@ public class DangoGenerator : MonoBehaviour
     {
         rabitAnimator = GetComponent<RabitAnimator>();
 
-        dangoLottery = GetComponent<DangoLottery>();
+        dangoLottery = dangoLotteryObj.GetComponent<DangoLottery>();
     }
 
     // Update is called once per frame
