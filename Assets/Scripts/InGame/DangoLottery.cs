@@ -12,7 +12,7 @@ public class DangoLottery : MonoBehaviour
         InitializeDictionary();
     }
 
-    GameObject ChooseDango()
+    public GameObject ChooseDango()
     {
         // ämó¶ÇÃçáåvílÇäiî[
         float total = 0;
