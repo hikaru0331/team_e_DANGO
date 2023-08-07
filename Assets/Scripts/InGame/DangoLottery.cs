@@ -7,13 +7,15 @@ public class DangoLottery : MonoBehaviour
     private Dictionary<GameObject, float> probability;
     public GameObject[] dangos;
 
-    private void Start()
+    private void Awake()
     {
         InitializeDictionary();
     }
 
     public GameObject ChooseDango()
     {
+        Debug.Log("抽選");
+
         // 確率の合計値を格納
         float total = 0;
 

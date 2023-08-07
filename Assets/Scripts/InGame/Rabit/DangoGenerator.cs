@@ -17,8 +17,8 @@ public class DangoGenerator : MonoBehaviour
     RabitAnimator rabitAnimator;
 
     //DangoLotteryƒNƒ‰ƒX‚ÌŽæ“¾
-    public GameObject dangoLotteryObj;
-    DangoLottery dangoLottery;
+    [SerializeField] private GameObject dangoLotteryObj;
+    private DangoLottery dangoLottery;
 
     // Start is called before the first frame update
     void Start()
