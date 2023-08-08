@@ -14,8 +14,6 @@ public class DangoLottery : MonoBehaviour
 
     public GameObject ChooseDango()
     {
-        Debug.Log("抽選");
-
         // 確率の合計値を格納
         float total = 0;
 

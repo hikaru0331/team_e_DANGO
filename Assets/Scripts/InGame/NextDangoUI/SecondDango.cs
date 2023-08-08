@@ -9,30 +9,41 @@ public class SecondDango : MonoBehaviour
     private Image secondImage;
 
     //DangoLotteryクラスの取得
+    [SerializeField] private GameObject dangoLotteryObj;
+    private DangoLottery dangoLottery;
+
+    //ThirdDangoクラスの取得
     [SerializeField] private GameObject thirdDangoObj;
     private ThirdDango thirdDango;
 
-    //抽選結果のダンゴオブジェクトを入れる変数
+    //ThirdDangoから得たダンゴオブジェクトを入れる変数
     [System.NonSerialized] public GameObject secondDango;
+    private SpriteRenderer secondRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        //コンポーネントの取得
         secondImage = this.GetComponent<Image>();
+        dangoLottery = dangoLotteryObj.GetComponent<DangoLottery>();
 
         thirdDango = thirdDangoObj.GetComponent<ThirdDango>();
 
-        ChooseSecondDango();
+        //ゲーム開始時にUIに表示するダンゴを決める処理
+        secondDango = dangoLottery.ChooseDango();
+        secondRenderer = secondDango.GetComponent<SpriteRenderer>();
+        secondImage.sprite = secondRenderer.sprite;
     }
 
-    public GameObject ChooseSecondDango()
+    public void ChooseSecondDango()
     {
-        secondDango = thirdDango.ChooseThirdDango();
-        SpriteRenderer secondRenderer = secondDango.GetComponent<SpriteRenderer>();
+        //ダンゴが生成されるたびにUIのダンゴを入れ替える処理
+        secondDango = thirdDango.thirdDango;
 
+        thirdDango.ChooseThirdDango();
+
+        secondRenderer = secondDango.GetComponent<SpriteRenderer>();
         secondImage.sprite = secondRenderer.sprite;
-
-        return secondDango;
     }
 
 }

@@ -16,16 +16,16 @@ public class DangoGenerator : MonoBehaviour
     //RabitAnimatorクラスの取得
     RabitAnimator rabitAnimator;
 
-    //DangoLotteryクラスの取得
-    [SerializeField] private GameObject dangoLotteryObj;
-    private DangoLottery dangoLottery;
+    //NextDangoクラスの取得
+    [SerializeField] private GameObject nextDangoObj;
+    private NextDango nextDango;
 
     // Start is called before the first frame update
     void Start()
     {
         rabitAnimator = GetComponent<RabitAnimator>();
 
-        dangoLottery = dangoLotteryObj.GetComponent<DangoLottery>();
+        nextDango = nextDangoObj.GetComponent<NextDango>();
     }
 
     // Update is called once per frame
@@ -42,8 +42,10 @@ public class DangoGenerator : MonoBehaviour
             //スプライトをRabitAnimatorクラスのshotSpriteに変更
             rabitAnimator.rabitSprite.sprite = rabitAnimator.shotSprite;
 
-            //ダンゴの抽選結果を取得
-            dango = dangoLottery.ChooseDango();
+            //NextDangoクラスのpublic変数nextDangoを代入
+            dango = nextDango.nextDango;
+
+            nextDango.ChooseNextDango();
 
             //ダンゴ生成
             generatedDango = Instantiate(dango, generatePosition.gameObject.transform.position, Quaternion.identity);
