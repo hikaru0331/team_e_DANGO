@@ -14,9 +14,11 @@ public class Filter : MonoBehaviour
     {
         //親オブジェクトのTransformを取得
         parentTransform = transform.parent.GetComponent<Transform>();
+        //親オブジェクトと線対象の位置を代入
+        float moveDistination = -parentTransform.position.x;
 
         //親オブジェクトの移動を制御
-        parentTransform.DOLocalMoveX(3.5f, 3.0f)
+        parentTransform.DOLocalMoveX(moveDistination, 3.0f)
            .SetEase(Ease.InOutQuad)
            .SetLoops(-1, LoopType.Yoyo);
     }
