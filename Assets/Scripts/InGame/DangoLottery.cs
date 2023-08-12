@@ -7,7 +7,7 @@ public class DangoLottery : MonoBehaviour
     private Dictionary<GameObject, float> probability;
     public GameObject[] dangos;
 
-    private void Start()
+    private void Awake()
     {
         InitializeDictionary();
     }

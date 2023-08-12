@@ -8,18 +8,6 @@ public class ColliderTest : MonoBehaviour
     private int score;
     [System.NonSerialized] public Sprite dangoSprite;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //インターフェースとして用意したクラスのインスタンス化
