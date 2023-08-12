@@ -12,11 +12,10 @@ public class DangoGRabit : MonoBehaviour, IDangoInfo
         spriteRenderer = GetComponent<SpriteRenderer>();
         Sprite = spriteRenderer.sprite;
     }
-    public string Name { get; } = "DangoG_rabit";
+    public string Name { get; set; } = "DangoG_rabit";
     public Sprite Sprite { get; set; } = null;
-    public string Color { get; } = "Green";
+    public string Color { get; set; } = "Green";
     public string Attribute { get; } = "Rabit";
 
     public int Point { get; set; } = 50;
-    //public float Probability { get; set; } = 0.0f;
 }

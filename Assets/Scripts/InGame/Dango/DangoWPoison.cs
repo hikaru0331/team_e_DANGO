@@ -12,11 +12,10 @@ public class DangoWPoison : MonoBehaviour, IDangoInfo
         Sprite = spriteRenderer.sprite;
     }
 
-    public string Name { get; } = "DangoW_poison";
+    public string Name { get; set; } = "DangoW_poison";
     public Sprite Sprite { get; set; } = null;
-    public string Color { get; } = "White";
+    public string Color { get; set; } = "White";
     public string Attribute { get; } = "Poison";
 
     public int Point { get; set; } = 0;
-    //public float Probability { get; set; } = 0.0f;
 }
