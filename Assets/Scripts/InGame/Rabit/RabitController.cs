@@ -10,11 +10,11 @@ public class RabitController : MonoBehaviour
  
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 4.0f)
+        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 5.0f)
         {
             rabit.transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -3.5f)
+        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -4.0f)
         {
             rabit.transform.position += Vector3.left * moveSpeed * Time.deltaTime;
         }
