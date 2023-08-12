@@ -1067,6 +1067,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dangoLotteryObj: {fileID: 518724358}
   thirdDangoObj: {fileID: 589991095}
+--- !u!1001 &2632105265770185219
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7960515437838534068, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_Name
+      value: Filter_White
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960515437838534090, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 605c36571b1fbe843bbd3b3d15d73d42, type: 3}
 --- !u!1001 &3899802310991370150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1121,6 +1178,10 @@ PrefabInstance:
     - target: {fileID: 3261075908797297518, guid: 600a95f68a031f442ae1e9bab1a1f334, type: 3}
       propertyPath: m_Name
       value: Filter_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261075908813736092, guid: 600a95f68a031f442ae1e9bab1a1f334, type: 3}
+      propertyPath: m_Size.y
+      value: 0.04877237
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 600a95f68a031f442ae1e9bab1a1f334, type: 3}
