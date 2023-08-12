@@ -18,7 +18,7 @@ public class DustBox : MonoBehaviour
         float moveDistination = -parentTransform.position.x;
 
         //親オブジェクトの移動を制御
-        parentTransform.DOLocalMoveX(moveDistination, 5.0f)
+        parentTransform.DOLocalMoveX(moveDistination, 10.0f)
            .SetEase(Ease.InOutQuad)
            .SetLoops(-1, LoopType.Yoyo);
     }
