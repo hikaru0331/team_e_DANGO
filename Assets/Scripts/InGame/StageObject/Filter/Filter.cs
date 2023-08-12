@@ -29,6 +29,7 @@ public class Filter : MonoBehaviour
     //ダンゴの色を変えるためのメソッド
     protected virtual void ChangeDangoColor()
     {
+        //バグ防止用の実行されない処理
         Debug.Log("オーバーライドが実行されていません");
     }
 

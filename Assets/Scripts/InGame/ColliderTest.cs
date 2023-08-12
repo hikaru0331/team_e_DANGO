@@ -28,7 +28,7 @@ public class ColliderTest : MonoBehaviour
             //毒ダンゴだったときにゲームオーバーにする処理
             if (dangoInfo.Attribute == "Poison")
             {
-                Debug.Log("GameOver");
+                //Debug.Log("GameOver");
             }
 
             Destroy(collision.gameObject);
