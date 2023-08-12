@@ -5,13 +5,17 @@ using DG.Tweening;
 
 public class DustBox : MonoBehaviour
 {
+    //ゴミ箱の親オブジェクトのTransformを入れる変数
+    //ゴミ箱本体と削除判定をするコライダーを別オブジェクトにしているため
     private Transform parentTransform;
 
     // Start is called before the first frame update
     void Start()
     {
+        //親オブジェクトのTransformを取得
         parentTransform = transform.parent.GetComponent<Transform>();
 
+        //親オブジェクトの移動を制御
         parentTransform.DOLocalMoveX(3.5f, 5.0f)
            .SetEase(Ease.InOutQuad)
            .SetLoops(-1, LoopType.Yoyo);
@@ -19,12 +23,7 @@ public class DustBox : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //ぶつかってきたオブジェクトを破壊
         Destroy(collision.gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
     }
 }
