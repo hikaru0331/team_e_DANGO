@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DangoGPoison : MonoBehaviour, IDangoInfo
 {
-
     private SpriteRenderer spriteRenderer;
 
     void Start()

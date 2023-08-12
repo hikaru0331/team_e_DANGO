@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class FilterGreen : MonoBehaviour
+public class Filter : MonoBehaviour
 {
     private Transform parentTransform;
 
@@ -17,14 +17,9 @@ public class FilterGreen : MonoBehaviour
            .SetLoops(-1, LoopType.Yoyo);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void ChangeDangoColor()
     {
-        IDangoInfo dangoInfo = collision.gameObject.GetComponent<IDangoInfo>();
 
-        if (dangoInfo != null)
-        {
-            Debug.Log("a");
-            //Destroy(collision.gameObject);
-        }
     }
+
 }
