@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManagerTest : MonoBehaviour
 {
     public Image[] images;
     public Image1Replace a;
@@ -36,14 +36,14 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // å›£å­å®Œæˆå¾ŒåˆæœŸåŒ–
+        // ’cqŠ®¬Œã‰Šú‰»
         if (!flags[2])
         {
-            // totalScoreæ›´æ–°
+            // totalScoreXV
             totalScore += score;
-            TotalScoreText.text = string.Format("Score:{0}" , totalScore);
+            TotalScoreText.text = string.Format("Score:{0}", totalScore);
 
-            // å›£å­åˆæœŸåŒ–
+            // ’cq‰Šú‰»
             foreach (var image in images)
             {
                 image.DOFade(0.0f, 0.80f);
@@ -54,49 +54,49 @@ public class ScoreManager : MonoBehaviour
                 flags[i] = true;
             }
 
-            // scoreåˆæœŸåŒ–
+            // score‰Šú‰»
             score = 0;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // æœ€åˆã®è¡çªæ™‚ã®å‡¦ç†
+        // Å‰‚ÌÕ“Ë‚Ìˆ—
         if (flags[0])
         {
-            // image1ã«å›£å­è¡¨ç¤º
-            if (other.gameObject.name == "dangoG(Clone)" )
+            // image1‚É’cq•\¦
+            if (other.gameObject.name == "dangoG(Clone)")
             {
                 ShowDangoImage(0, 0);
             }
-            else if (other.gameObject.name == "dangoR(Clone)" )
+            else if (other.gameObject.name == "dangoR(Clone)")
             {
                 ShowDangoImage(0, 1);
             }
-            else if (other.gameObject.name == "dangoW(Clone)" )
+            else if (other.gameObject.name == "dangoW(Clone)")
             {
                 ShowDangoImage(0, 2);
             }
-            else if (other.gameObject.name == "dangoG_rabit(Clone)" )
+            else if (other.gameObject.name == "dangoG_rabit(Clone)")
             {
                 ShowDangoImage(0, 3);
             }
-            else if (other.gameObject.name == "dangoR_rabit(Clone)" )
+            else if (other.gameObject.name == "dangoR_rabit(Clone)")
             {
                 ShowDangoImage(0, 4);
             }
-            else if (other.gameObject.name == "dangoW_rabit(Clone)" )
+            else if (other.gameObject.name == "dangoW_rabit(Clone)")
             {
                 ShowDangoImage(0, 5);
             }
 
             flags[0] = false;
-            ScoreText.text = string.Format("+{0}" , score);
+            ScoreText.text = string.Format("+{0}", score);
         }
-        // 2å›ç›®ã®è¡çªæ™‚ã®å‡¦ç†
+        // 2‰ñ–Ú‚ÌÕ“Ë‚Ìˆ—
         else if (flags[1])
         {
-            // image2ã«å›£å­è¡¨ç¤º
+            // image2‚É’cq•\¦
             if (other.gameObject.name == "dangoG(Clone)")
             {
                 ShowDangoImage(1, 0);
@@ -113,22 +113,22 @@ public class ScoreManager : MonoBehaviour
             {
                 ShowDangoImage(1, 3);
             }
-            else if (other.gameObject.name == "dangoR_rabit(Clone)" )
+            else if (other.gameObject.name == "dangoR_rabit(Clone)")
             {
                 ShowDangoImage(1, 4);
             }
-            else if (other.gameObject.name == "dangoW_rabit(Clone)" )
+            else if (other.gameObject.name == "dangoW_rabit(Clone)")
             {
                 ShowDangoImage(1, 5);
             }
 
             flags[1] = false;
-            ScoreText.text = string.Format("+{0}" , score);
+            ScoreText.text = string.Format("+{0}", score);
         }
-        // 3å›ç›®ã®è¡çªæ™‚ã®å‡¦ç†
+        // 3‰ñ–Ú‚ÌÕ“Ë‚Ìˆ—
         else if (flags[2])
         {
-            // image3ã«å›£å­è¡¨ç¤º
+            // image3‚É’cq•\¦
             if (other.gameObject.name == "dangoG(Clone)")
             {
                 ShowDangoImage(2, 0);
@@ -145,19 +145,19 @@ public class ScoreManager : MonoBehaviour
             {
                 ShowDangoImage(2, 3);
             }
-            else if (other.gameObject.name == "dangoR_rabit(Clone)" )
+            else if (other.gameObject.name == "dangoR_rabit(Clone)")
             {
                 ShowDangoImage(2, 4);
             }
-            else if (other.gameObject.name == "dangoW_rabit(Clone)" )
+            else if (other.gameObject.name == "dangoW_rabit(Clone)")
             {
                 ShowDangoImage(2, 5);
             }
-            
+
             flags[2] = false;
-            ScoreText.text = string.Format("+{0}" , score);
+            ScoreText.text = string.Format("+{0}", score);
         }
-        
+
         Destroy(other.gameObject);
         Debug.Log("Goal!!");
     }
@@ -178,7 +178,7 @@ public class ScoreManager : MonoBehaviour
                 c.SetImage(imageIndex);
                 break;
         }
-        
+
         switch (imageIndex)
         {
             case 0:
@@ -193,12 +193,12 @@ public class ScoreManager : MonoBehaviour
                 break;
         }
 
-        // ä¸‰è‰²å›£å­ã®å ´åˆã¯ã‚¹ã‚³ã‚¢ã‚’2å€ã«ã™ã‚‹
+        // OF’cq‚Ìê‡‚ÍƒXƒRƒA‚ğ2”{‚É‚·‚é
         if (CheckTriColorDango())
         {
             score *= 2;
         }
-        // å˜è‰²å›£å­ã®å ´åˆã¯ã‚¹ã‚³ã‚¢ã‚’1.5å€ã«ã™ã‚‹
+        // ’PF’cq‚Ìê‡‚ÍƒXƒRƒA‚ğ1.5”{‚É‚·‚é
         else if (CheckMonoColorDango())
         {
             score *= 1.5f;
@@ -207,13 +207,13 @@ public class ScoreManager : MonoBehaviour
 
     private bool CheckTriColorDango()
     {
-        // ä¸‰è‰²å›£å­ã®å ´åˆã¯trueã‚’è¿”ã™
+        // OF’cq‚Ìê‡‚Ítrue‚ğ•Ô‚·
         return (a.GetCurrentImage() != b.GetCurrentImage() && a.GetCurrentImage() != c.GetCurrentImage() && b.GetCurrentImage() != c.GetCurrentImage());
     }
 
     private bool CheckMonoColorDango()
     {
-        // å˜è‰²å›£å­ã®å ´åˆã¯trueã‚’è¿”ã™
+        // ’PF’cq‚Ìê‡‚Ítrue‚ğ•Ô‚·
         return (a.GetCurrentImage() == b.GetCurrentImage() && a.GetCurrentImage() == c.GetCurrentImage());
     }
 
