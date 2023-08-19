@@ -18,24 +18,21 @@ public class GameOverManager : MonoBehaviour
 
     public void PoisonChecker()
     {
-        if(hasPoison)
+        if(firstLife.sprite != emptyHeart)
         {
-            if(firstLife.sprite != emptyHeart)
-            {
-                firstLife.sprite = emptyHeart;
-            }
-            else if(secondLife.sprite != emptyHeart) 
-            {
-                secondLife.sprite = emptyHeart;
-            }
-            else if (thirdLife.sprite != emptyHeart)
-            {
-                thirdLife.sprite = emptyHeart;
-                GameOver();
-            }
-
-            hasPoison = false;
+            firstLife.sprite = emptyHeart;
         }
+        else if(secondLife.sprite != emptyHeart) 
+        {
+            secondLife.sprite = emptyHeart;
+        }
+        else if (thirdLife.sprite != emptyHeart)
+        {
+            thirdLife.sprite = emptyHeart;
+            GameOver();
+        }
+            
+        hasPoison = false;
     }
 
     private void GameOver()

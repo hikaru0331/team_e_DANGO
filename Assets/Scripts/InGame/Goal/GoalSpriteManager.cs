@@ -59,7 +59,12 @@ public class GoalSpriteManager : MonoBehaviour
             StartCoroutine(scoreManager.ScoreCalculator());
 
             Invoke("RemoveSprite", 0.8f);
-            gameOverManager.Invoke("PoisonChecker", 0.8f);
+
+            //串にダンゴが3つ刺さった状態で毒ダンゴが新たに触れたときにライフが減らされないための分岐
+            if (gameOverManager.hasPoison == true)
+            {
+                gameOverManager.Invoke("PoisonChecker", 0.8f);
+            }
         }
     }
 
