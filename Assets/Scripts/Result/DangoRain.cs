@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DangoRain : MonoBehaviour
 {
-    //private GameObject[] dangoPrefabs;
+    private GameObject[] dangoPrefabs;
     private Transform spawnPoint;
     private float fallSpeed = 2f;
     private int scoreThereshold = 300;  // 300点以上で落ちてくる
@@ -38,19 +38,19 @@ public class DangoRain : MonoBehaviour
             if (totalScore >= scoreThereshold)
             {
                 // 生成する団子の種類をランダムに決定
-                //int randomDangoIndex = Random.Range(0, dangoPrefabs.Length);
+                int randomDangoIndex = Random.Range(0, dangoPrefabs.Length);
 
                 // 生成する団子の位置をランダムに決定
-                //GameObject dango = Instantiate(dangoPrefabs[randomDangoIndex], spawnPoint.position, Quaternion.identity);
+                GameObject dango = Instantiate(dangoPrefabs[randomDangoIndex], spawnPoint.position, Quaternion.identity);
 
                 // 団子にアタッチされたRigidbody2Dコンポーネントを取得し、降下速度を設定
-                //Rigidbody2D rb = dango.GetComponent<Rigidbody2D>();
-                //rb.velocity = Vector2.down * fallSpeed;
+                Rigidbody2D rb = dango.GetComponent<Rigidbody2D>();
+                rb.velocity = Vector2.down * fallSpeed;
 
                 dangosSpawned++;
             }
 
-            
+
         }
         
     }
