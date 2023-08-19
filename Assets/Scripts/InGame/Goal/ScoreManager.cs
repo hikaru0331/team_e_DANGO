@@ -11,11 +11,13 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
 
     private GoalSpriteManager goalSpriteManager;
+    private GameOverManager gameOverManager;
 
     // Start is called before the first frame update
     void Start()
     {
         goalSpriteManager = GetComponent<GoalSpriteManager>();
+        gameOverManager = GetComponent<GameOverManager>();
 
         scoreText.text = "Score: " + totalScore.ToString();
     }
@@ -28,7 +30,11 @@ public class ScoreManager : MonoBehaviour
 
     public IEnumerator ScoreCalculator()
     {
-        if (goalSpriteManager.rightColor == goalSpriteManager.centerColor &&
+        if (gameOverManager.hasPoison == true)
+        {
+            totalScore += score * 0;
+        }
+        else if (goalSpriteManager.rightColor == goalSpriteManager.centerColor &&
             goalSpriteManager.centerColor == goalSpriteManager.leftColor)
         {
             totalScore += score * 1.5f;
