@@ -17,6 +17,7 @@ public class GoalSpriteManager : MonoBehaviour
     [System.NonSerialized] public string leftColor;
 
     private ScoreManager scoreManager;
+    private GameOverManager gameOverManager;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class GoalSpriteManager : MonoBehaviour
         leftRenderer = goalLeft.GetComponent<SpriteRenderer>();
 
         scoreManager = this.gameObject.GetComponent<ScoreManager>();
+        gameOverManager = this.gameObject.GetComponent<GameOverManager>();
 
         RemoveSprite();
     }
@@ -57,6 +59,7 @@ public class GoalSpriteManager : MonoBehaviour
             StartCoroutine(scoreManager.ScoreCalculator());
 
             Invoke("RemoveSprite", 0.8f);
+            gameOverManager.Invoke("PoisonChecker", 0.8f);
         }
     }
 

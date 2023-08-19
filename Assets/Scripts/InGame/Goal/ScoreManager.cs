@@ -32,24 +32,21 @@ public class ScoreManager : MonoBehaviour
             goalSpriteManager.centerColor == goalSpriteManager.leftColor)
         {
             totalScore += score * 1.5f;
-            scoreText.text = "Score: " + totalScore.ToString();
         }
         else if (goalSpriteManager.rightColor != goalSpriteManager.centerColor &&
             goalSpriteManager.centerColor != goalSpriteManager.leftColor &&
             goalSpriteManager.leftColor != goalSpriteManager.rightColor)
         {
             totalScore += score * 2.0f;
-            scoreText.text = "Score: " + totalScore.ToString();
         }
         else
         {
-            totalScore += score;
-            scoreText.text = "Score: " + totalScore.ToString();
+            totalScore += score;            
         }
 
-        Debug.Log(totalScore);
+        yield return new WaitForSeconds(0.8f);
 
-            yield return new WaitForSeconds(0.8f);
+        scoreText.text = "Score: " + totalScore.ToString();
 
         score = 0;
     }

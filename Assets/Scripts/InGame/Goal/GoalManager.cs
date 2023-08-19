@@ -9,11 +9,13 @@ public class GoalManager : MonoBehaviour
 
     private ScoreManager scoreManager;
     private GoalSpriteManager goalSpriteManager;
+    private GameOverManager gameOverManager;
 
     private void Start()
     {
         scoreManager = this.gameObject.GetComponent<ScoreManager>();
         goalSpriteManager = this.gameObject.GetComponent<GoalSpriteManager>();
+        gameOverManager = this.gameObject.GetComponent<GameOverManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,7 +35,7 @@ public class GoalManager : MonoBehaviour
             //毒ダンゴだったときにゲームオーバーにする処理
             if (dangoInfo.Attribute == "Poison")
             {
-                //Debug.Log("GameOver");
+                gameOverManager.hasPoison = true;
             }
 
             Destroy(collision.gameObject);
