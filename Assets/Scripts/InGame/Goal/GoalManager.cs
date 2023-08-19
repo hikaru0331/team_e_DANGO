@@ -35,7 +35,11 @@ public class GoalManager : MonoBehaviour
             //毒ダンゴだったときにゲームオーバーにする処理
             if (dangoInfo.Attribute == "Poison")
             {
-                gameOverManager.hasPoison = true;
+                //串にダンゴが3つ刺さった状態で毒ダンゴが新たに触れたときにライフが減らされないための分岐
+                if (goalSpriteManager.leftRenderer.sprite == null)
+                {
+                    gameOverManager.hasPoison = true;
+                }                
             }
 
             Destroy(collision.gameObject);

@@ -10,7 +10,7 @@ public class GoalSpriteManager : MonoBehaviour
 
     private SpriteRenderer rightRenderer;
     private SpriteRenderer centerRenderer;
-    private SpriteRenderer leftRenderer;
+    [System.NonSerialized] public SpriteRenderer leftRenderer;
 
     [System.NonSerialized] public string rightColor;
     [System.NonSerialized] public string centerColor;
