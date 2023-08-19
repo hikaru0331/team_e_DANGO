@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
     private float score;
     [System.NonSerialized] public float totalScore;
+
+    [SerializeField] private TMP_Text scoreText;
 
     private GoalSpriteManager goalSpriteManager;
 
@@ -13,6 +16,8 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         goalSpriteManager = GetComponent<GoalSpriteManager>();
+
+        scoreText.text = "Score: " + totalScore.ToString();
     }
 
     //É_ÉìÉSÇ…äiî[Ç≥ÇÍÇƒÇ¢ÇÈÉXÉRÉAèÓïÒÇéÊìæÇµÇƒâ¡éZÇ∑ÇÈèàóù
@@ -27,16 +32,19 @@ public class ScoreManager : MonoBehaviour
             goalSpriteManager.centerColor == goalSpriteManager.leftColor)
         {
             totalScore += score * 1.5f;
+            scoreText.text = "Score: " + totalScore.ToString();
         }
         else if (goalSpriteManager.rightColor != goalSpriteManager.centerColor &&
             goalSpriteManager.centerColor != goalSpriteManager.leftColor &&
             goalSpriteManager.leftColor != goalSpriteManager.rightColor)
         {
             totalScore += score * 2.0f;
+            scoreText.text = "Score: " + totalScore.ToString();
         }
         else
         {
             totalScore += score;
+            scoreText.text = "Score: " + totalScore.ToString();
         }
 
         Debug.Log(totalScore);
