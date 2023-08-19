@@ -12,6 +12,10 @@ public class GoalSpriteManager : MonoBehaviour
     private SpriteRenderer centerRenderer;
     private SpriteRenderer leftRenderer;
 
+    [System.NonSerialized] public string rightColor;
+    [System.NonSerialized] public string centerColor;
+    [System.NonSerialized] public string leftColor;
+
     private ScoreManager scoreManager;
 
     // Start is called before the first frame update
@@ -26,29 +30,34 @@ public class GoalSpriteManager : MonoBehaviour
         RemoveSprite();
     }
 
-    public void SpriteChanger(Sprite dangoSprite)
-    {
-        if(rightRenderer.sprite == null)
-            rightRenderer.sprite = dangoSprite;
-
-        else if(centerRenderer.sprite == null)
-            centerRenderer.sprite = dangoSprite;
-
-        else if (leftRenderer.sprite == null)
-        {
-            leftRenderer.sprite = dangoSprite;
-
-            scoreManager.ScoreCalculator();
-
-            Invoke("RemoveSprite", 0.8f);
-        }
-    }
-
     private void RemoveSprite()
     {
         rightRenderer.sprite = null;
         centerRenderer.sprite = null;
         leftRenderer.sprite = null;
+    }
+
+    public void SpriteChanger(Sprite dangoSprite, string dangoColor)
+    {
+        if (rightRenderer.sprite == null)
+        {
+            rightRenderer.sprite = dangoSprite;
+            rightColor = dangoColor;
+        }
+        else if (centerRenderer.sprite == null)
+        {
+            centerRenderer.sprite = dangoSprite;
+            centerColor = dangoColor;
+        }
+        else if (leftRenderer.sprite == null)
+        {
+            leftRenderer.sprite = dangoSprite;
+            leftColor = dangoColor;
+
+            StartCoroutine(scoreManager.ScoreCalculator());
+
+            Invoke("RemoveSprite", 0.8f);
+        }
     }
 
 }

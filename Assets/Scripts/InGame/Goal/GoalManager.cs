@@ -28,7 +28,7 @@ public class GoalManager : MonoBehaviour
             scoreManager.PointCalculator(dangoInfo.Point);
 
             //SpriteManagerクラスのスプライト変換メソッドにスコアを渡す
-            goalSpriteManager.SpriteChanger(dangoInfo.Sprite);
+            goalSpriteManager.SpriteChanger(dangoInfo.Sprite, dangoInfo.Color);
 
             //毒ダンゴだったときにゲームオーバーにする処理
             if (dangoInfo.Attribute == "Poison")

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private int score;
-    private int totalScore;
+    private float score;
+    [System.NonSerialized] public float totalScore;
 
-    private IDangoInfo dangoInfo;
+    private GoalSpriteManager goalSpriteManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        dangoInfo = GetComponent<IDangoInfo>();
+        goalSpriteManager = GetComponent<GoalSpriteManager>();
     }
 
     //ƒ_ƒ“ƒS‚ÉŠi”[‚³‚ê‚Ä‚¢‚éƒXƒRƒAî•ñ‚ğæ“¾‚µ‚Ä‰ÁZ‚·‚éˆ—
@@ -21,9 +21,29 @@ public class ScoreManager : MonoBehaviour
         score += Point;
     }
 
-    public void ScoreCalculator()
+    public IEnumerator ScoreCalculator()
     {
-        //if(dangoInfo.)
+        if (goalSpriteManager.rightColor == goalSpriteManager.centerColor &&
+            goalSpriteManager.centerColor == goalSpriteManager.leftColor)
+        {
+            totalScore += score * 1.5f;
+        }
+        else if (goalSpriteManager.rightColor != goalSpriteManager.centerColor &&
+            goalSpriteManager.centerColor != goalSpriteManager.leftColor &&
+            goalSpriteManager.leftColor != goalSpriteManager.rightColor)
+        {
+            totalScore += score * 2.0f;
+        }
+        else
+        {
+            totalScore += score;
+        }
+
+        Debug.Log(totalScore);
+
+            yield return new WaitForSeconds(0.8f);
+
+        score = 0;
     }
 
 }
