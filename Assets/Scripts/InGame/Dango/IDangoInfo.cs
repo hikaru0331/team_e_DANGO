@@ -4,12 +4,11 @@ using UnityEngine;
 
 public interface IDangoInfo
 {
-    string Name { get; }
+    string Name { get; set; }
     Sprite Sprite { get; set; }
-    string Color { get; }
+    string Color { get; set; }
     string Attribute { get; }
 
 
     int Point { get; set; }
-    //float Probability { get; set; }
 }

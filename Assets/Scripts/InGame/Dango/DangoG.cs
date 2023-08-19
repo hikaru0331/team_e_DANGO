@@ -12,11 +12,10 @@ public class DangoG : MonoBehaviour, IDangoInfo
         Sprite = spriteRenderer.sprite;
     }
 
-    public string Name { get; } = "DangoG";
+    public string Name { get; set; } = "DangoG";
     public Sprite Sprite { get; set; } = null;
-    public string Color { get; } = "Green";
+    public string Color { get; set; } = "Green";
     public string Attribute { get; } = "Normal";
 
     public int Point { get; set; } = 10;
-    //public float Probability { get; set; } = 0.1f;
 }
