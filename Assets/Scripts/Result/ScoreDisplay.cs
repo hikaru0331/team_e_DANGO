@@ -19,4 +19,9 @@ public class ScoreDisplay : MonoBehaviour
     {
         
     }
+
+    public void ShowScore (float Score)
+    {
+        scoreText.text = "スコア: " + Score.ToString();
+    }
 }

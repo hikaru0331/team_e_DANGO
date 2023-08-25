@@ -6,6 +6,7 @@ public class DangoRain : MonoBehaviour
 {
     public GameObject[] dangoPrefabs;
     public Transform spawnPoint;
+    public ScoreDisplay scoreDisplay;   // スコア表示用のスクリプト
 
     private float fallSpeed = 2f;
     private float totalScore;
@@ -59,6 +60,8 @@ public class DangoRain : MonoBehaviour
             }
 
             yield return new WaitForSeconds(delay); // delay秒待つ
+
+            scoreDisplay.ShowScore(totalScore);    // スコアを表示
         }
     }
 
