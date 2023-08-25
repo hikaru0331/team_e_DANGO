@@ -60,9 +60,9 @@ public class DangoRain : MonoBehaviour
             }
 
             yield return new WaitForSeconds(delay); // delay秒待つ
-
-            scoreDisplay.ShowScore(totalScore);    // スコアを表示
         }
+
+        scoreDisplay.ShowScore(totalScore);    // スコアを表示
     }
 
 }
