@@ -15,6 +15,7 @@ public class Filter : MonoBehaviour
         //親オブジェクトのTransformを取得
         parentTransform = transform.parent.GetComponent<Transform>();
         //親オブジェクトと線対象の位置を代入
+        //オブジェクトのスタート位置が右端と左端のどちらでも同じ動きをさせるため
         float moveDistination = -parentTransform.position.x;
         //移動速度をランダムに決定
         float moveSpeed = Random.Range(2.0f, 4.0f);
