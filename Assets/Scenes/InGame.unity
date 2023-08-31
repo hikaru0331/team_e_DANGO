@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generatePosition: {fileID: 505347254}
-  generateInterval: 1
+  dangoInterval: 1
   nextDangoObj: {fileID: 874879062}
 --- !u!114 &474125248
 MonoBehaviour:

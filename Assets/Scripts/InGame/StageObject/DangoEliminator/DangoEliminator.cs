@@ -29,6 +29,9 @@ public class DangoEliminator : MonoBehaviour
         eliminatorTransform.DOLocalMoveX(moveDistination, 10.0f)
            .SetEase(Ease.InOutQuad)
            .SetLoops(-1, LoopType.Yoyo);
+
+        //タヌキ生成までの時間をランダムで決定
+        raccoonInterval = Random.Range(45.0f, 120.0f);
     }
 
     private void RaccoonSetter()
@@ -41,6 +44,9 @@ public class DangoEliminator : MonoBehaviour
     {
         raccoon.gameObject.SetActive(false);
         dustBox.gameObject.SetActive(true);
+
+        //タヌキ生成までの時間をランダムで決定
+        raccoonInterval = Random.Range(45.0f, 120.0f);
     }
 
     // Update is called once per frame
@@ -48,7 +54,6 @@ public class DangoEliminator : MonoBehaviour
     {
 
         timer += Time.deltaTime;
-        raccoonInterval = Random.Range(45.0f, 90.0f);
 
         if (timer >= raccoonInterval)
         {
