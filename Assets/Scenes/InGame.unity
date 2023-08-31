@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generatePosition: {fileID: 505347254}
-  interval: 1
+  generateInterval: 1
   nextDangoObj: {fileID: 874879062}
 --- !u!114 &474125248
 MonoBehaviour:
@@ -1870,10 +1870,10 @@ Transform:
   m_Children:
   - {fileID: 2066368902}
   - {fileID: 1781607980}
+  - {fileID: 1466148113}
   - {fileID: 1412662734}
   - {fileID: 1712297512}
   - {fileID: 2005774116}
-  - {fileID: 1466148113}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2368,7 +2368,7 @@ Transform:
   - {fileID: 1302378651}
   - {fileID: 183561571}
   m_Father: {fileID: 1205451585}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1491473984 stripped
 Transform:
@@ -2783,6 +2783,11 @@ Transform:
   m_Father: {fileID: 1205451585}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1791080876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6429315821038497246, guid: 3810a43ea9ec89d458701a3db487ddf3, type: 3}
+  m_PrefabInstance: {fileID: 6429315820212339202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1889799684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6429315821038497244, guid: 3810a43ea9ec89d458701a3db487ddf3, type: 3}
@@ -3300,6 +3305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89934a60aeb4f8642a3c9e29c0ac7f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dustBox: {fileID: 1791080876}
+  raccoon: {fileID: 1350650381}
 --- !u!4 &2068761817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3834234385189078910, guid: f81e6d05a2f465d439b836d08b185ad5, type: 3}
