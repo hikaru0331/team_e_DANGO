@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MusicPlayer : MonoBehaviour
+public class SoundPlayer : MonoBehaviour
 {
     private static bool isLoad = false; // 自身がすでにロードされているかを判定するフラグ
     
@@ -14,10 +14,6 @@ public class MusicPlayer : MonoBehaviour
         }
         isLoad = true; // ロードされていなかったら、フラグをロード済みに設定する
 		DontDestroyOnLoad(gameObject);
-	}
-
-    void LoadScene(){
-		SceneManager.LoadScene("Option");
 	}
 
     // Update is called once per frame
