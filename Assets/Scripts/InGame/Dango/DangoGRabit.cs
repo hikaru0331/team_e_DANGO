@@ -17,5 +17,5 @@ public class DangoGRabit : MonoBehaviour, IDangoInfo
     public string Color { get; set; } = "Green";
     public string Attribute { get; } = "Rabit";
 
-    public int Point { get; set; } = 50;
+    public int Point { get; set; } = 500;
 }
