@@ -16,7 +16,6 @@ public class AnimationController : MonoBehaviour
     {
         ButtonHover = button.GetComponent<Animator>();
         RabbitHover = illustration.GetComponent<Animator>();
-        Debug.Log("Start");
     }
 
     // Update is called once per frame
@@ -27,11 +26,8 @@ public class AnimationController : MonoBehaviour
 
     public void StartIllustrationAnimation()
     {
-        bool isButtonHighlighted = ButtonHover.GetBool("Highlighted");   // ボタンのハイライト状態を取得
-        Debug.Log(isButtonHighlighted);
-
         // ボタンがハイライトされている場合、ウサギのアニメーションを再生
-        if(isButtonHighlighted)
+        if(ButtonHover.GetCurrentAnimatorStateInfo(0).IsName("Highlighted"))
         {
             RabbitHover.SetTrigger("Highlighted");
             Debug.Log("Highlighted");
