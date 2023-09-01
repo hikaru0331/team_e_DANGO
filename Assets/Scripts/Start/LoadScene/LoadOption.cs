@@ -22,6 +22,7 @@ public class LoadOption : MonoBehaviour
 
     public void ChangeScene()
     {
+      // うさぎ画像変更
       RabbitIdleOp.SetActive(false);
       RabbitPushOp.SetActive(true);
       
