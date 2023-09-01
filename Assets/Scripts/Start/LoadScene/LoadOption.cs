@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LoadOption : MonoBehaviour
 {
-    // Start is called before the first frame update
+  public GameObject RabbitIdleOp;
+  public GameObject RabbitPushOp;
+
+  // Start is called before the first frame update
     void Start()
     {
         
@@ -19,6 +22,9 @@ public class LoadOption : MonoBehaviour
 
     public void ChangeScene()
     {
+      RabbitIdleOp.SetActive(false);
+      RabbitPushOp.SetActive(true);
+      
       SceneManager.LoadScene("Option");
     }
 }

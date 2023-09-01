@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LoadGame : MonoBehaviour
 {
+    public GameObject RabbitIdleGa;
+    public GameObject RabbitPushGa;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,9 @@ public class LoadGame : MonoBehaviour
 
     void LoadScene()
     {
+        RabbitIdleGa.SetActive(false);
+        RabbitPushGa.SetActive(true);
+        
         // SceneManager.LoadScene("ゲームシーン");
     }
 }
