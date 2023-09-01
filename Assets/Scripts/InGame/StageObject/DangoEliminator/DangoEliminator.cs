@@ -38,6 +38,8 @@ public class DangoEliminator : MonoBehaviour
     {
         dustBox.gameObject.SetActive(false);
         raccoon.gameObject.SetActive(true);
+
+        //ここにパーティクル生成と破壊の処理
     }
 
     public void DustBoxSetter()
@@ -45,9 +47,13 @@ public class DangoEliminator : MonoBehaviour
         raccoon.gameObject.SetActive(false);
         dustBox.gameObject.SetActive(true);
 
+        //ここにパーティクル生成と破壊の処理
+
         //タヌキ生成までの時間をランダムで決定
         raccoonInterval = Random.Range(45.0f, 120.0f);
     }
+
+    //Tweenを一時停止するコルーチンをここらへんに書く
 
     // Update is called once per frame
     void Update()
