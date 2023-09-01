@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class GoalManager : MonoBehaviour
 {
-    public IDangoInfo dangoInfo;
-
     private ScoreManager scoreManager;
     private GoalSpriteManager goalSpriteManager;
     private GameOverManager gameOverManager;
@@ -22,9 +20,7 @@ public class GoalManager : MonoBehaviour
     {
         //インターフェースとして用意したクラスのインスタンス化
         //ダンゴに直接アタッチされていないが、アタッチされているクラス(DangoGなど)の親クラスのため取得可能
-        dangoInfo = collision.gameObject.GetComponent<IDangoInfo>();
-
-        if (dangoInfo != null)
+        if (collision.gameObject.TryGetComponent<IDangoInfo>(out var dangoInfo))
         {
             //毒ダンゴだったときにゲームオーバーにする処理
             if (dangoInfo.Attribute == "Poison")
