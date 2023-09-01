@@ -343,7 +343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc6edaedb72f774469e47d126d715ccc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a21d54b6047e128428a444b9eb05320e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc6edaedb72f774469e47d126d715ccc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a21d54b6047e128428a444b9eb05320e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1671,7 +1671,7 @@ MonoBehaviour:
   firstLife: {fileID: 333745236}
   secondLife: {fileID: 341043453}
   thirdLife: {fileID: 2146576904}
-  emptyHeart: {fileID: 21300000, guid: b2283b5d29657ce469b77622219a757e, type: 3}
+  emptyHeart: {fileID: 21300000, guid: cecc734f5baf5824d94ee1f7ae50ca88, type: 3}
   gameOverCanvas: {fileID: 1896780749}
   rabit: {fileID: 474125243}
 --- !u!114 &987078682
@@ -3375,7 +3375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc6edaedb72f774469e47d126d715ccc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a21d54b6047e128428a444b9eb05320e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
