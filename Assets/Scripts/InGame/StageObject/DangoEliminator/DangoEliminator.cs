@@ -12,6 +12,9 @@ public class DangoEliminator : MonoBehaviour
     [SerializeField] private GameObject dustBox;
     [SerializeField] private GameObject raccoon;
 
+    [SerializeField] private GameObject smokeParticle;
+
+    //タヌキ登場までの時間を設定するための変数
     private float timer;
     private float raccoonInterval;
 
@@ -31,7 +34,7 @@ public class DangoEliminator : MonoBehaviour
            .SetLoops(-1, LoopType.Yoyo);
 
         //タヌキ生成までの時間をランダムで決定
-        raccoonInterval = Random.Range(45.0f, 120.0f);
+        raccoonInterval = Random.Range(5.0f, 5.0f);
     }
 
     private void RaccoonSetter()
@@ -39,7 +42,8 @@ public class DangoEliminator : MonoBehaviour
         dustBox.gameObject.SetActive(false);
         raccoon.gameObject.SetActive(true);
 
-        //ここにパーティクル生成と破壊の処理
+        GameObject smokeParticleClone = Instantiate(smokeParticle, this.gameObject.transform.position, Quaternion.identity);
+        Destroy(smokeParticleClone, 2.0f);
     }
 
     public void DustBoxSetter()
@@ -47,7 +51,8 @@ public class DangoEliminator : MonoBehaviour
         raccoon.gameObject.SetActive(false);
         dustBox.gameObject.SetActive(true);
 
-        //ここにパーティクル生成と破壊の処理
+        GameObject smokeParticleClone = Instantiate(smokeParticle, this.gameObject.transform.position, Quaternion.identity);
+        Destroy(smokeParticleClone, 2.0f);
 
         //タヌキ生成までの時間をランダムで決定
         raccoonInterval = Random.Range(45.0f, 120.0f);
@@ -58,12 +63,16 @@ public class DangoEliminator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         timer += Time.deltaTime;
 
         if (timer >= raccoonInterval)
         {
-            RaccoonSetter();
+            //タヌキのオブジェクトが非アクティブの時に実行する
+            if (!raccoon.gameObject.activeInHierarchy)
+            {
+                RaccoonSetter();
+                timer = 0;
+            }                    
         }
     }
 }
