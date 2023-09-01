@@ -12,6 +12,7 @@ public class DangoEliminator : MonoBehaviour
     [SerializeField] private GameObject dustBox;
     [SerializeField] private GameObject raccoon;
 
+    //煙パーティクルの取得
     [SerializeField] private GameObject smokeParticle;
 
     //タヌキ登場までの時間を設定するための変数
@@ -37,20 +38,24 @@ public class DangoEliminator : MonoBehaviour
         raccoonInterval = Random.Range(5.0f, 5.0f);
     }
 
-    private void RaccoonSetter()
+    //タヌキをアクティブにするメソッド
+    private void RaccoonSet()
     {
         dustBox.gameObject.SetActive(false);
         raccoon.gameObject.SetActive(true);
 
+        //煙パーティクルの生成・破壊
         GameObject smokeParticleClone = Instantiate(smokeParticle, this.gameObject.transform.position, Quaternion.identity);
         Destroy(smokeParticleClone, 2.0f);
     }
 
-    public void DustBoxSetter()
+    //ゴミ箱をアクティブにするメソッド
+    public void DustBoxSet()
     {
         raccoon.gameObject.SetActive(false);
         dustBox.gameObject.SetActive(true);
 
+        //煙パーティクルの生成・破壊
         GameObject smokeParticleClone = Instantiate(smokeParticle, this.gameObject.transform.position, Quaternion.identity);
         Destroy(smokeParticleClone, 2.0f);
 
@@ -70,7 +75,7 @@ public class DangoEliminator : MonoBehaviour
             //タヌキのオブジェクトが非アクティブの時に実行する
             if (!raccoon.gameObject.activeInHierarchy)
             {
-                RaccoonSetter();
+                RaccoonSet();
                 timer = 0;
             }                    
         }

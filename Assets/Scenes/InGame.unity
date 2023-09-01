@@ -1898,6 +1898,9 @@ GameObject:
   - component: {fileID: 1350650382}
   - component: {fileID: 1350650384}
   - component: {fileID: 1350650383}
+  - component: {fileID: 1350650387}
+  - component: {fileID: 1350650386}
+  - component: {fileID: 1350650385}
   m_Layer: 0
   m_Name: Raccoon
   m_TagString: Untagged
@@ -1988,6 +1991,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1350650385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350650381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea8338db0224de243912df8cbe351d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1350650386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350650381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f588c061e00511459518e22c0f106fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dangoLotteryObj: {fileID: 518724358}
+--- !u!114 &1350650387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350650381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183b65590a8a16e47bb1e7ba41fce1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1396267175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3834234385189078910, guid: f81e6d05a2f465d439b836d08b185ad5, type: 3}

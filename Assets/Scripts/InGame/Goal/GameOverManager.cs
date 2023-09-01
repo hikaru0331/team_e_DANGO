@@ -50,7 +50,7 @@ public class GameOverManager : MonoBehaviour
 
     private void Update()
     {
-        if (gameOverCanvas == true)
+        if (gameOverCanvas.activeSelf == true)
         {
             if (Input.GetMouseButtonDown(0))
             {

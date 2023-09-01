@@ -22,7 +22,7 @@ public class GoalManager : MonoBehaviour
         //ダンゴに直接アタッチされていないが、アタッチされているクラス(DangoGなど)の親クラスのため取得可能
         if (collision.gameObject.TryGetComponent<IDangoInfo>(out var dangoInfo))
         {
-            //毒ダンゴだったときにゲームオーバーにする処理
+            //毒ダンゴだったときに、ライフを減らすための変数をtrueに変更
             if (dangoInfo.Attribute == "Poison")
             {
                 gameOverManager.hasPoison = true;
