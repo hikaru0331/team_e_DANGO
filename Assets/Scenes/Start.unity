@@ -518,7 +518,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 685495854}
-  - component: {fileID: 685495853}
   - component: {fileID: 685495855}
   m_Layer: 0
   m_Name: SeManager
@@ -527,25 +526,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &685495853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685495852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fa235840ae7564f865a082a95c3c6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 685495855}
-  decide: {fileID: 8300000, guid: 6f8a30948d75d944eaf0065c9095522a, type: 3}
-  sound2: {fileID: 0}
-  sound3: {fileID: 0}
-  sound4: {fileID: 0}
-  start: {fileID: 1978800357}
-  option: {fileID: 1185883749}
 --- !u!4 &685495854
 Transform:
   m_ObjectHideFlags: 0
@@ -553,13 +533,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685495852}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.038308043, y: -0.4323135, z: 0.03961736}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1804959480}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &685495855
 AudioSource:
@@ -799,7 +779,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1185883747
 GameObject:
@@ -816,7 +796,7 @@ GameObject:
   - component: {fileID: 1185883752}
   - component: {fileID: 1185883753}
   - component: {fileID: 1185883754}
-  - component: {fileID: 1185883755}
+  - component: {fileID: 1185883756}
   m_Layer: 5
   m_Name: ButtonOption
   m_TagString: Untagged
@@ -892,6 +872,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1185883753}
         m_TargetAssemblyTypeName: LoadOption, Assembly-CSharp
         m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1185883756}
+        m_TargetAssemblyTypeName: Test1, Assembly-CSharp
+        m_MethodName: OnClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -987,7 +979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 3.1
---- !u!114 &1185883755
+--- !u!114 &1185883756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -996,10 +988,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1185883747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef233b1d3568f14781eb5a1742514b8, type: 3}
+  m_Script: {fileID: 11500000, guid: bf0c9b10057149b43ada60d9785c4974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectAudioSource: {fileID: 2017252461}
 --- !u!1 &1277031932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1278,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724634677}
   m_CullTransparentMesh: 1
+--- !u!1 &1804959478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804959480}
+  - component: {fileID: 1804959481}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1804959480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804959478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.038308043, y: -0.4323135, z: 0.03961736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2017252462}
+  - {fileID: 685495854}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1804959481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804959478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d857d4a1de1fde041a00f61fe68cd345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmManager: {fileID: 2017252461}
+  seManager: {fileID: 685495855}
+  decide: {fileID: 8300000, guid: 6f8a30948d75d944eaf0065c9095522a, type: 3}
 --- !u!1 &1923894752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1427,7 @@ RectTransform:
   - {fileID: 1724634678}
   - {fileID: 458289552}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1408,6 +1448,7 @@ GameObject:
   - component: {fileID: 1978800357}
   - component: {fileID: 1978800360}
   - component: {fileID: 1978800361}
+  - component: {fileID: 1978800362}
   m_Layer: 5
   m_Name: ButtonGame
   m_TagString: Untagged
@@ -1479,7 +1520,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1978800358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1978800362}
+        m_TargetAssemblyTypeName: Test1, Assembly-CSharp
+        m_MethodName: OnClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1978800358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1552,6 +1605,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 3.1
+--- !u!114 &1978800362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978800355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0c9b10057149b43ada60d9785c4974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2017252460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,9 +1627,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2017252462}
   - component: {fileID: 2017252461}
-  - component: {fileID: 2017252463}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: BgmManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1673,23 +1737,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017252460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 1.97, z: 0.036223665}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.048308045, y: 2.4023135, z: -0.0033936948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1804959480}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2017252463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017252460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c8d5c1f4227ff64ca35ef4a5a8b1e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

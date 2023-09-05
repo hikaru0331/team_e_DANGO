@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BgmControl : MonoBehaviour
 {
-    private AudioSource SoundManager;
-    private AudioSource SeManager;
+    private AudioSource bgmManager;
+    private AudioSource seManager;
 
     public Slider volumeSlider_BGM;
     public Slider volumeSlider_SE;
@@ -14,12 +14,12 @@ public class BgmControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager = GameObject.Find("SoundManager").GetComponent<AudioSource>();
-        SeManager = GameObject.Find("SeManager").GetComponent<AudioSource>();
+        bgmManager = GameObject.Find("BgmManager").GetComponent<AudioSource>();
+        seManager = GameObject.Find("SeManager").GetComponent<AudioSource>();
 
         // スライダーの初期値を設定
-        volumeSlider_BGM.value = SoundManager.volume;
-        volumeSlider_SE.value = SeManager.volume;
+        volumeSlider_BGM.value = bgmManager.volume;
+        volumeSlider_SE.value = seManager.volume;
     }
 
     // Update is called once per frame
@@ -31,15 +31,15 @@ public class BgmControl : MonoBehaviour
     public void Slider_BGMChanged()
     {
         // スライダーの値に基づいて音量を変更
-        SoundManager.volume = volumeSlider_BGM.value;
+        bgmManager.volume = volumeSlider_BGM.value;
         
-        Debug.Log("BGMの音量を" + SoundManager.volume + "に変更しました。");
+        Debug.Log("BGMの音量を" + bgmManager.volume + "に変更しました。");
     }
 
     public void Slider_SEChanged()
     {
-        SeManager.volume = volumeSlider_SE.value;
+        seManager.volume = volumeSlider_SE.value;
 
-        Debug.Log("SEの音量を" + SeManager.volume + "に変更しました。");
+        Debug.Log("SEの音量を" + seManager.volume + "に変更しました。");
     }
 }
