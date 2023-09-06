@@ -44,6 +44,8 @@ public class DangoEliminator : MonoBehaviour
         dustBox.gameObject.SetActive(false);
         raccoon.gameObject.SetActive(true);
 
+        //StartCoroutine(PauseTween(1.0f));
+
         //煙パーティクルの生成・破壊
         GameObject smokeParticleClone = Instantiate(smokeParticle, this.gameObject.transform.position, Quaternion.identity);
         Destroy(smokeParticleClone, 2.0f);
@@ -55,6 +57,8 @@ public class DangoEliminator : MonoBehaviour
         raccoon.gameObject.SetActive(false);
         dustBox.gameObject.SetActive(true);
 
+        StartCoroutine(PauseTween(1.0f));
+
         //煙パーティクルの生成・破壊
         GameObject smokeParticleClone = Instantiate(smokeParticle, this.gameObject.transform.position, Quaternion.identity);
         Destroy(smokeParticleClone, 2.0f);
@@ -63,7 +67,15 @@ public class DangoEliminator : MonoBehaviour
         raccoonInterval = Random.Range(45.0f, 120.0f);
     }
 
-    //Tweenを一時停止するコルーチンをここらへんに書く
+    //Tweenを一時停止するコルーチン
+    IEnumerator PauseTween(float pauseTime)
+    {
+        eliminatorTransform.DOPause();
+
+        yield return new WaitForSeconds(pauseTime);
+
+        eliminatorTransform.DOPlay();
+    }
 
     // Update is called once per frame
     void Update()
