@@ -6,6 +6,8 @@ public class FeverStarter : MonoBehaviour
 {
     private int dangoEatCount;
 
+    private CapsuleCollider2D raccoonCollider;
+
     DangoEliminator dangoEliminator;
 
     [SerializeField] private GameObject dangoLotteryObj;
@@ -13,6 +15,8 @@ public class FeverStarter : MonoBehaviour
 
     private void Start()
     {
+        raccoonCollider = GetComponent<CapsuleCollider2D>();
+
         dangoEliminator = GetComponentInParent<DangoEliminator>();
         dangoLottery = dangoLotteryObj.GetComponent<DangoLottery>();
     }
@@ -20,6 +24,7 @@ public class FeverStarter : MonoBehaviour
     public void DangoEat(string dangoAttribute)
     {
         dangoEatCount++;
+        raccoonCollider.enabled = false;
 
         if (dangoAttribute == "Poison")
         {
