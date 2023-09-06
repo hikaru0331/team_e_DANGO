@@ -57,7 +57,7 @@ public class DangoEliminator : MonoBehaviour
         raccoon.gameObject.SetActive(false);
         dustBox.gameObject.SetActive(true);
 
-        StartCoroutine(PauseTween(1.0f));
+        //StartCoroutine(PauseTween(1.0f));
 
         //煙パーティクルの生成・破壊
         GameObject smokeParticleClone = Instantiate(smokeParticle, this.gameObject.transform.position, Quaternion.identity);
