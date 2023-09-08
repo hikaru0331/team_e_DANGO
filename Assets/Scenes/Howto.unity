@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 491518605}
   - component: {fileID: 491518604}
   - component: {fileID: 491518608}
+  - component: {fileID: 491518609}
   m_Layer: 5
   m_Name: ButtonNext
   m_TagString: Untagged
@@ -390,7 +391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 271, y: -189.78}
+  m_AnchoredPosition: {x: -10, y: -189.78}
   m_SizeDelta: {x: 150, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &491518604
@@ -463,6 +464,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 491518609}
+        m_TargetAssemblyTypeName: SeController, Assembly-CSharp
+        m_MethodName: OnClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &491518606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +528,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Howto1: {fileID: 1630944181}
   Howto2: {fileID: 125495997}
+--- !u!114 &491518609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491518602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0c9b10057149b43ada60d9785c4974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1343569258
 GameObject:
   m_ObjectHideFlags: 0
