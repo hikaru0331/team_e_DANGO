@@ -35,7 +35,7 @@ public class DangoEliminator : MonoBehaviour
            .SetLoops(-1, LoopType.Yoyo);
 
         //タヌキ生成までの時間をランダムで決定
-        raccoonInterval = Random.Range(5.0f, 5.0f);
+        raccoonInterval = Random.Range(45.0f, 120.0f);
     }
 
     //タヌキをアクティブにするメソッド
@@ -43,8 +43,6 @@ public class DangoEliminator : MonoBehaviour
     {
         dustBox.gameObject.SetActive(false);
         raccoon.gameObject.SetActive(true);
-
-        //StartCoroutine(PauseTween(1.0f));
 
         //煙パーティクルの生成・破壊
         GameObject smokeParticleClone = Instantiate(smokeParticle, this.gameObject.transform.position, Quaternion.identity);
@@ -56,8 +54,6 @@ public class DangoEliminator : MonoBehaviour
     {
         raccoon.gameObject.SetActive(false);
         dustBox.gameObject.SetActive(true);
-
-        //StartCoroutine(PauseTween(1.0f));
 
         //煙パーティクルの生成・破壊
         GameObject smokeParticleClone = Instantiate(smokeParticle, this.gameObject.transform.position, Quaternion.identity);

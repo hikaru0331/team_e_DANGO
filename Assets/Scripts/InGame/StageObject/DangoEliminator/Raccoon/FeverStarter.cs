@@ -34,16 +34,19 @@ public class FeverStarter : MonoBehaviour
 
         if (dangoAttribute == "Poison")
         {
+            //毒ダンゴ食事時のスプライトに変更し、1.0f動きを止める
             raccoonAnimation.poisonEatAnimation();
             StartCoroutine(dangoEliminator.PauseTween(1.0f));
 
             yield return new WaitForSeconds(1.0f);
 
+            //1.0f後にフィーバー実行
             FeverSet();
             dangoEliminator.DustBoxSet();
 
             dangoEatCount = 0;
 
+            //タヌキの画像を通常時にリセット
             raccoonAnimation.raccoonSpriteReset();
         }
         else if (dangoEatCount >= 5)
@@ -52,10 +55,12 @@ public class FeverStarter : MonoBehaviour
 
             yield return new WaitForSeconds(1.0f);
 
+            //1.0f後にゴミ箱に変身
             dangoEliminator.DustBoxSet();
 
             dangoEatCount = 0;
 
+            //タヌキの画像を通常時にリセット
             raccoonAnimation.raccoonSpriteReset();
         }
 
