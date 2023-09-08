@@ -10,6 +10,8 @@ public class FeverStarter : MonoBehaviour
 
     DangoEliminator dangoEliminator;
 
+    RaccoonAnimation raccoonAnimation;
+
     [SerializeField] private GameObject dangoLotteryObj;
     private DangoLottery dangoLottery;
 
@@ -18,6 +20,8 @@ public class FeverStarter : MonoBehaviour
         raccoonCollider = GetComponent<CapsuleCollider2D>();
 
         dangoEliminator = GetComponentInParent<DangoEliminator>();
+        raccoonAnimation = GetComponent<RaccoonAnimation>();
+
         dangoLottery = dangoLotteryObj.GetComponent<DangoLottery>();
     }
 
@@ -30,18 +34,29 @@ public class FeverStarter : MonoBehaviour
 
         if (dangoAttribute == "Poison")
         {
-            //後々アニメーション再生分のInvokeを入れる
+            raccoonAnimation.poisonEatAnimation();
+            StartCoroutine(dangoEliminator.PauseTween(1.0f));
+
+            yield return new WaitForSeconds(1.0f);
+
             FeverSet();
             dangoEliminator.DustBoxSet();
 
             dangoEatCount = 0;
+
+            raccoonAnimation.raccoonSpriteReset();
         }
         else if (dangoEatCount >= 5)
         {
-            //後々アニメーション再生分のInvokeを入れる
+            StartCoroutine(dangoEliminator.PauseTween(1.0f));
+
+            yield return new WaitForSeconds(1.0f);
+
             dangoEliminator.DustBoxSet();
 
             dangoEatCount = 0;
+
+            raccoonAnimation.raccoonSpriteReset();
         }
 
         raccoonCollider.enabled = true;

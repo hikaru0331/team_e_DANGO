@@ -9,8 +9,10 @@ public class RaccoonAnimation : MonoBehaviour
     private SpriteRenderer raccoonSprite;
 
     //タヌキが持つダンゴのオブジェクトの取得
-    [SerializeField] private GameObject dangoPosition;
+    [SerializeField] private GameObject dangoPositionObj;
     private SpriteRenderer positionSprite;
+    //ダンゴ生成ポジションの初期状態を入れる変数
+    private Transform positionInitialTransform;
 
     //タヌキ画像差分を入れる配列
     [SerializeField] private Sprite[] raccoonSprites;
@@ -27,7 +29,9 @@ public class RaccoonAnimation : MonoBehaviour
         raccoonSprite = this.gameObject.GetComponent<SpriteRenderer>();
 
         //タヌキが持つダンゴオブジェクトのRenderer取得
-        positionSprite = dangoPosition.GetComponent<SpriteRenderer>();
+        positionSprite = dangoPositionObj.GetComponent<SpriteRenderer>();
+
+        positionInitialTransform = dangoPositionObj.transform;
 
         //親オブジェクトのDangoEliminatorクラスの取得
         dangoEliminator = transform.parent.gameObject.GetComponent<DangoEliminator>();
@@ -49,15 +53,15 @@ public class RaccoonAnimation : MonoBehaviour
         switch (dangoColor)
         {
             case "Green":
-                instantiaterParticle = Instantiate(eatParticles[0], dangoPosition.transform);
+                instantiaterParticle = Instantiate(eatParticles[0], dangoPositionObj.transform);
                 break;
 
             case "Red":
-                instantiaterParticle = Instantiate(eatParticles[1], dangoPosition.transform);
+                instantiaterParticle = Instantiate(eatParticles[1], dangoPositionObj.transform);
                 break;
 
             case "White":
-                instantiaterParticle = Instantiate(eatParticles[2], dangoPosition.transform);
+                instantiaterParticle = Instantiate(eatParticles[2], dangoPositionObj.transform);
                 break;
         }
 
@@ -65,7 +69,29 @@ public class RaccoonAnimation : MonoBehaviour
         Destroy(instantiaterParticle, 1.0f);
 
         //ダンゴをだんだん小さくする処理
-        dangoPosition.transform.DOScale(new Vector2(0.0f, 0.0f), 1.0f);
+        dangoPositionObj.transform.DOScale(new Vector2(0.0f, 0.0f), 1.0f);
 
+        Invoke("dangoSpriteReset", 1.0f);
+    }
+
+    private void dangoSpriteReset()
+    {
+        //手に持っているダンゴを消す
+        positionSprite.sprite = null;
+        //手に持つダンゴのオブジェクトのサイズを元に戻す
+        dangoPositionObj.transform
+            .DOScale(new Vector2(0.4268948f, 0.4268948f), 0.0f);
+
+        raccoonSprite.sprite = raccoonSprites[0];
+    }
+
+    public void poisonEatAnimation()
+    {
+        raccoonSprite.sprite = raccoonSprites[2];
+    }
+
+    public void raccoonSpriteReset()
+    {
+        raccoonSprite.sprite = raccoonSprites[0];
     }
 }
