@@ -1327,6 +1327,8 @@ MonoBehaviour:
   bgmManager: {fileID: 2017252461}
   seManager: {fileID: 685495855}
   decide: {fileID: 8300000, guid: 6f8a30948d75d944eaf0065c9095522a, type: 3}
+  countdown: {fileID: 8300000, guid: 10d489c7819752f44adca5e9c2d639b5, type: 3}
+  start: {fileID: 8300000, guid: 1c17f1c0ed284c248a6ad24c2bb49fb0, type: 3}
 --- !u!1 &1923894752
 GameObject:
   m_ObjectHideFlags: 0

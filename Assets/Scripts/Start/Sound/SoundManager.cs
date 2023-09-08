@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource bgmManager;
     public AudioSource seManager;
     public AudioClip decide;
+    public AudioClip countdown;
+    public AudioClip start;
 
     private static SoundManager instance;
 

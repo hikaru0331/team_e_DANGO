@@ -20,7 +20,19 @@ public class SeController : MonoBehaviour
 
     public void OnClickButton()
     {
-        Debug.Log("クリックされました");
         soundManager.seManager.PlayOneShot(soundManager.decide);
+        Debug.Log("クリックされました");
+    }
+
+    public void PlayCountdown()
+    {
+        soundManager.seManager.PlayOneShot(soundManager.countdown);
+        Debug.Log("カウントダウン開始");
+    }
+
+    public void PlayStart()
+    {
+        soundManager.seManager.PlayOneShot(soundManager.start);
+        Debug.Log("スタート");
     }
 }

@@ -6,14 +6,13 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
-    private TextMeshProUGUI counttext;
+    public TextMeshProUGUI counttext;
+    public SeController seController;
     public Image start;
 
     // Start is called before the first frame update
     void Start()
     {
-        counttext = GetComponent<TextMeshProUGUI>();
-        
         StartCoroutine(CountdownCoroutine());
     }
 
@@ -25,17 +24,24 @@ public class Countdown : MonoBehaviour
 
     IEnumerator CountdownCoroutine()
     {
-        counttext.text = "3";
-        yield return new WaitForSeconds(1.0f);
+        // 3秒カウントダウン
+        seController.PlayCountdown();
+        counttext.text = "3";   // 3を表示
+        yield return new WaitForSeconds(1.0f);  // 1秒待つ
  
+        seController.PlayCountdown();
 		counttext.text = "2";
 		yield return new WaitForSeconds(1.0f);
- 
+     
+        seController.PlayCountdown();
 		counttext.text = "1";
 		yield return new WaitForSeconds(1.0f);
 		
+        seController.PlayStart();
 		counttext.text = "";
+        Debug.Log("カウントダウン終了");
 
+        // カウントダウンが終わったらスタートを表示
         start.gameObject.SetActive(true);
     }
 }
