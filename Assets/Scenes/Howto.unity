@@ -453,8 +453,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 491518608}
-        m_TargetAssemblyTypeName: Changehowto, Assembly-CSharp
-        m_MethodName: ChangeHowto
+        m_TargetAssemblyTypeName: LoadGame, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

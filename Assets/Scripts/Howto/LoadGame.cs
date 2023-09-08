@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LoadGame : MonoBehaviour
 {
-    public GameObject RabbitIdleGa;
-    public GameObject RabbitPushGa;
+    public GameObject Howto1;
+    public GameObject Howto2;
+
+    int count = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +22,18 @@ public class LoadGame : MonoBehaviour
         
     }
 
-    void LoadScene()
+    public void ChangeScene()
     {
-        RabbitIdleGa.SetActive(false);
-        RabbitPushGa.SetActive(true);
-        
-        // SceneManager.LoadScene("ゲームシーン");
+      if(count == 0)
+      {
+        // 遊び方画像変更
+        Howto1.SetActive(false);
+        Howto2.SetActive(true);
+        count++;
+      }
+      else
+      {
+        SceneManager.LoadScene("Game");
+      }
     }
 }
