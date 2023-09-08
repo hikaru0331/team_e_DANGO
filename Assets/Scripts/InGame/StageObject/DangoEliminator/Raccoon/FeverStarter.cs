@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FeverStarter : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class FeverStarter : MonoBehaviour
 
     [SerializeField] private GameObject dangoLotteryObj;
     private DangoLottery dangoLottery;
+
+    [SerializeField] private GameObject feverTimeCanvas;
+    [SerializeField] private TMP_Text feverTimerText;
+    private float feverTimer;
 
     private void Start()
     {
@@ -73,6 +78,20 @@ public class FeverStarter : MonoBehaviour
 
         dangoLottery.FeverDictionary();
 
+        feverTimer = 30.0f;
+        feverTimeCanvas.SetActive(true);
+
         dangoLottery.Invoke("InitializeDictionary", 30.0f);
+    }
+
+    private void Update()
+    {
+        feverTimer -= Time.deltaTime;
+        feverTimerText.text = "FeverTime: " + feverTimer.ToString();
+
+        if (feverTimer <= 0)
+        {
+            feverTimeCanvas.SetActive(false);
+        }
     }
 }

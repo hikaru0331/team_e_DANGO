@@ -35,7 +35,7 @@ public class DangoEliminator : MonoBehaviour
            .SetLoops(-1, LoopType.Yoyo);
 
         //タヌキ生成までの時間をランダムで決定
-        raccoonInterval = Random.Range(45.0f, 120.0f);
+        raccoonInterval = Random.Range(5.0f, 5.0f);
     }
 
     //タヌキをアクティブにするメソッド
