@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadGame : MonoBehaviour
+public class LoadCount : MonoBehaviour
 {
     public GameObject Howto1;
     public GameObject Howto2;
@@ -33,7 +33,7 @@ public class LoadGame : MonoBehaviour
       }
       else
       {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Count");
       }
     }
 }
