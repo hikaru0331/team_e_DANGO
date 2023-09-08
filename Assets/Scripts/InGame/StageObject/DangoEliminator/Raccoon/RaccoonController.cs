@@ -5,10 +5,12 @@ using UnityEngine;
 public class RaccoonController : MonoBehaviour
 {
     private FeverStarter feverStarter;
+    private RaccoonAnimation raccoonAnimation;
 
     private void Start()
     {
         feverStarter = this.gameObject.GetComponent<FeverStarter>();
+        raccoonAnimation = this.gameObject.GetComponent<RaccoonAnimation>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -17,7 +19,9 @@ public class RaccoonController : MonoBehaviour
         //ダンゴに直接アタッチされていないが、アタッチされているクラス(DangoGなど)の親クラスのため取得可能
         if (collision.gameObject.TryGetComponent<IDangoInfo>(out var dangoInfo))
         {
-            feverStarter.DangoEat(dangoInfo.Attribute);
+            StartCoroutine(feverStarter.DangoEat(dangoInfo.Attribute));
+
+            raccoonAnimation.EatAnimation(dangoInfo.Sprite, dangoInfo.Color);
 
             Destroy(collision.gameObject);
         }

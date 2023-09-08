@@ -21,10 +21,12 @@ public class FeverStarter : MonoBehaviour
         dangoLottery = dangoLotteryObj.GetComponent<DangoLottery>();
     }
 
-    public void DangoEat(string dangoAttribute)
+    public IEnumerator DangoEat(string dangoAttribute)
     {
         dangoEatCount++;
         raccoonCollider.enabled = false;
+
+        yield return new WaitForSeconds(1.0f);
 
         if (dangoAttribute == "Poison")
         {
@@ -41,6 +43,8 @@ public class FeverStarter : MonoBehaviour
 
             dangoEatCount = 0;
         }
+
+        raccoonCollider.enabled = true;
     }
 
     private void FeverSet()

@@ -45,8 +45,6 @@ public class DangoLottery : MonoBehaviour
     //通常状態の発生確率を辞書に定義
     public void InitializeDictionary()
     {
-        Debug.Log("initializeDic");
-
         probability = new Dictionary<GameObject, float>();
         probability.Add(dangos[0], 20.0f);
         probability.Add(dangos[1], 1.66f);
@@ -64,7 +62,6 @@ public class DangoLottery : MonoBehaviour
     //フィーバー状態の発生確率を辞書に定義
     public void FeverDictionary()
     {
-        Debug.Log("FeverDic");
         probability = new Dictionary<GameObject, float>();
         probability.Add(dangos[0], 0.0f);
         probability.Add(dangos[1], 0.0f);

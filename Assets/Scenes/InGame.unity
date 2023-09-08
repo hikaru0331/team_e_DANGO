@@ -1907,7 +1907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1350650382
 Transform:
   m_ObjectHideFlags: 0
@@ -2005,6 +2005,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8338db0224de243912df8cbe351d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dangoPosition: {fileID: 2004444223}
+  raccoonSprites:
+  - {fileID: 21300000, guid: 5d47f5a331996a94a81ea31197dc6740, type: 3}
+  - {fileID: 21300000, guid: f59fc09c7c787184088da07a73dc6f15, type: 3}
+  - {fileID: 21300000, guid: 96891a4ddca93af47a76938ba66c6125, type: 3}
+  eatParticles:
+  - {fileID: 7883096015607064398, guid: 85c970e0f8567ab4887990a44decc4a9, type: 3}
+  - {fileID: 8149037661051711175, guid: 87f62658c47e4914d91ba3188b365092, type: 3}
+  - {fileID: 9024836101474873227, guid: e07a2359894c79c4aac81cd456f3c063, type: 3}
 --- !u!114 &1350650386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3913,7 +3922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6429315821038497246, guid: 3810a43ea9ec89d458701a3db487ddf3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6429315821038497247, guid: 3810a43ea9ec89d458701a3db487ddf3, type: 3}
       propertyPath: m_Sprite

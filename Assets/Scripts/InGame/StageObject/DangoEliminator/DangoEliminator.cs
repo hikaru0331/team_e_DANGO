@@ -68,7 +68,7 @@ public class DangoEliminator : MonoBehaviour
     }
 
     //Tween‚ğˆê’â~‚·‚éƒRƒ‹[ƒ`ƒ“
-    IEnumerator PauseTween(float pauseTime)
+    public IEnumerator PauseTween(float pauseTime)
     {
         eliminatorTransform.DOPause();
 
