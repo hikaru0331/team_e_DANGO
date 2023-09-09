@@ -46,17 +46,17 @@ public class DangoLottery : MonoBehaviour
     public void InitializeDictionary()
     {
         probability = new Dictionary<GameObject, float>();
-        probability.Add(dangos[0], 20.0f);
+        probability.Add(dangos[0], 23.33f);
         probability.Add(dangos[1], 1.66f);
-        probability.Add(dangos[2], 11.66f);
+        probability.Add(dangos[2], 8.33f);
 
-        probability.Add(dangos[3], 20.0f);
+        probability.Add(dangos[3], 23.33f);
         probability.Add(dangos[4], 1.66f);
-        probability.Add(dangos[5], 11.66f);
+        probability.Add(dangos[5], 8.33f);
 
-        probability.Add(dangos[6], 20.0f);
+        probability.Add(dangos[6], 23.33f);
         probability.Add(dangos[7], 1.66f);
-        probability.Add(dangos[8], 11.66f);
+        probability.Add(dangos[8], 8.33f);
     }
 
     //フィーバー状態の発生確率を辞書に定義
