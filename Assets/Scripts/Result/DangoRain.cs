@@ -63,6 +63,8 @@ public class DangoRain : MonoBehaviour
         }
 
         scoreDisplay.ShowScore(totalScore);    // スコアを表示
+
+        totalScore = 0; // スコアをリセット
     }
 
 }
