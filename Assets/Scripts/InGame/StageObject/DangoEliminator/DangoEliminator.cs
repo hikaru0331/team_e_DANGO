@@ -61,6 +61,7 @@ public class DangoEliminator : MonoBehaviour
 
         //タヌキ生成までの時間をランダムで決定
         raccoonInterval = Random.Range(45.0f, 120.0f);
+        timer = 0;
     }
 
     //Tweenを一時停止するコルーチン
