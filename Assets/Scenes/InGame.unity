@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 474125246}
   - component: {fileID: 474125247}
   - component: {fileID: 474125248}
+  - component: {fileID: 474125249}
   m_Layer: 0
   m_Name: Rabit
   m_TagString: Untagged
@@ -552,7 +553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generatePosition: {fileID: 505347254}
-  dangoInterval: 1
   nextDangoObj: {fileID: 874879062}
 --- !u!114 &474125248
 MonoBehaviour:
@@ -568,6 +568,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleSprite: {fileID: 21300000, guid: f1f77dcbf82a3b844a641ca76e939c8f, type: 3}
   shotSprite: {fileID: 21300000, guid: 75169155a8930a74892a08204b115f5e, type: 3}
+--- !u!114 &474125249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474125243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4c4803541208b43a059e6c0df53baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &486627850
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class DangoGenerator : MonoBehaviour
     //’cq¶¬‚É‚©‚©‚í‚é•Ï”
     [System.NonSerialized] public GameObject dango;
     private float timer;
-    public float dangoInterval;
+    [System.NonSerialized] public static float dangoInterval = 2.0f;
     private GameObject generatedDango;
 
     //RabitAnimatorƒNƒ‰ƒX‚Ìæ“¾
