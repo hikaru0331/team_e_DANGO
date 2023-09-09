@@ -1324,7 +1324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d857d4a1de1fde041a00f61fe68cd345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmManager: {fileID: 2017252461}
   seManager: {fileID: 685495855}
   decide: {fileID: 8300000, guid: 6f8a30948d75d944eaf0065c9095522a, type: 3}
   countdown: {fileID: 8300000, guid: 10d489c7819752f44adca5e9c2d639b5, type: 3}
@@ -1655,7 +1654,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2017252462}
-  - component: {fileID: 2017252461}
+  - component: {fileID: 2017252464}
+  - component: {fileID: 2017252463}
   m_Layer: 0
   m_Name: BgmManager
   m_TagString: Untagged
@@ -1663,7 +1663,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &2017252461
+--- !u!4 &2017252462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017252460}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.048308045, y: 2.4023135, z: -0.0033936948}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1804959480}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2017252463
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1672,8 +1687,8 @@ AudioSource:
   m_GameObject: {fileID: 2017252460}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -4575405054738293173, guid: 7779bfce64c5fb046a0521c4ce784ee1, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b2b89cb25a2270846958207c667e1329, type: 3}
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1683,7 +1698,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 19.292156
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1759,18 +1774,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &2017252462
-Transform:
+--- !u!114 &2017252464
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017252460}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.048308045, y: 2.4023135, z: -0.0033936948}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1804959480}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a9b6626197f1349bfc1999a10ff241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgm: {fileID: 8300000, guid: b2b89cb25a2270846958207c667e1329, type: 3}
+  bgm_ingame: {fileID: 8300000, guid: 2de7f861c78f0fc43bb58d9f9ab7b7e2, type: 3}
+  bgm_result: {fileID: 8300000, guid: af8c4985874683743aadc4205b162eca, type: 3}
