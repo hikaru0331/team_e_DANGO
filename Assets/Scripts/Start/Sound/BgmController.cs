@@ -39,14 +39,14 @@ public class BgmController : MonoBehaviour
         }
         
         // Countからingameへ
-        if (beforeScene == "Count" && nextScene.name == "ingame")
+        if (beforeScene == "Count" && nextScene.name == "test")
         {
             bgmManager.clip = bgm_ingame; // BGMを切り替える
             bgmManager.Play();
         }
 
         // ingameからResultへ
-        if (beforeScene == "ingame" && nextScene.name == "Result")
+        if (beforeScene == "test" && nextScene.name == "Result")
         {
             bgmManager.Stop();
             bgmManager.clip = bgm_result;
@@ -60,7 +60,7 @@ public class BgmController : MonoBehaviour
             bgmManager.clip = bgm_ingame;
             bgmManager.Play();
         }
-        
+
         //遷移後のシーン名を「１つ前のシーン名」として保持
         beforeScene = nextScene.name;
     }
