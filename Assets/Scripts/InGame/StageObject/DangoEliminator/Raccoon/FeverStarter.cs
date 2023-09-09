@@ -16,10 +16,6 @@ public class FeverStarter : MonoBehaviour
     [SerializeField] private GameObject dangoLotteryObj;
     private DangoLottery dangoLottery;
 
-    [SerializeField] private GameObject feverTimeCanvas;
-    [SerializeField] private TMP_Text feverTimerText;
-    private float feverTimer;
-
     private void Start()
     {
         raccoonCollider = GetComponent<CapsuleCollider2D>();
@@ -75,23 +71,10 @@ public class FeverStarter : MonoBehaviour
     private void FeverSet()
     {
         //フィーバー移行時の演出
-
         dangoLottery.FeverDictionary();
 
-        feverTimer = 30.0f;
-        feverTimeCanvas.SetActive(true);
+        FeverTimerController.isFever = true;
 
         dangoLottery.Invoke("InitializeDictionary", 30.0f);
-    }
-
-    private void Update()
-    {
-        feverTimer -= Time.deltaTime;
-        feverTimerText.text = "FeverTime: " + feverTimer.ToString();
-
-        if (feverTimer <= 0)
-        {
-            feverTimeCanvas.SetActive(false);
-        }
     }
 }
