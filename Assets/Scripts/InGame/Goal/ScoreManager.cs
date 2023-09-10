@@ -6,7 +6,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     private float score;
-    [System.NonSerialized] public float totalScore;
+    [System.NonSerialized] public static float totalScore;
 
     [SerializeField] private TMP_Text scoreText;
 
@@ -33,6 +33,7 @@ public class ScoreManager : MonoBehaviour
         if (gameOverManager.hasPoison == true)
         {
             totalScore += score * 0;
+            //gameOverManager.hasPoison = false;
         }
         else if (goalSpriteManager.rightColor == goalSpriteManager.centerColor &&
             goalSpriteManager.centerColor == goalSpriteManager.leftColor)

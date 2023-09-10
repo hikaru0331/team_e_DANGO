@@ -11,23 +11,23 @@ public class DangoRain : MonoBehaviour
     private float fallSpeed = 2f;
     private float totalScore;
     private int scoreThereshold = 500;  // 500点以上で落ちてくる
-    private ScoreManager scoreManager;
 
     // Start is called before the first frame update
     private void Start()
     {
-        scoreManager = new ScoreManager();
-        totalScore = scoreManager.totalScore;   // ゲーム終了時のスコアを取得
-        totalScore = 10000;   // テスト用にスコアを500に設定
+        Debug.Log(ScoreManager.totalScore);
+
+        totalScore = ScoreManager.totalScore;   // ゲーム終了時のスコアを取得
         if (totalScore >= scoreThereshold)
         {
-            StartDangoRain();
+            StartCoroutine(DropDangos());
         }
-    }
+        else
+        {
+            ScoreReset();
+        }
 
-    public void StartDangoRain()
-    {
-        StartCoroutine(DropDangos());
+        Debug.Log(totalScore);
     }
 
     private IEnumerator DropDangos()
@@ -62,9 +62,15 @@ public class DangoRain : MonoBehaviour
             yield return new WaitForSeconds(delay); // delay秒待つ
         }
 
+        ScoreReset();
+
+    }
+
+    private void ScoreReset()
+    {
         scoreDisplay.ShowScore(totalScore);    // スコアを表示
 
-        totalScore = 0; // スコアをリセット
+        ScoreManager.totalScore = 0; // スコアをリセット
     }
 
 }
