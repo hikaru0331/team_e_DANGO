@@ -32,8 +32,6 @@ public class GameOverManager : MonoBehaviour
             thirdLife.sprite = emptyHeart;
             GameOver();
         }
-            
-        //hasPoison = false;
     }
 
     private void GameOver()

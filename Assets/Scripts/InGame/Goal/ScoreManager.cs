@@ -33,7 +33,6 @@ public class ScoreManager : MonoBehaviour
         if (gameOverManager.hasPoison == true)
         {
             totalScore += score * 0;
-            //gameOverManager.hasPoison = false;
         }
         else if (goalSpriteManager.rightColor == goalSpriteManager.centerColor &&
             goalSpriteManager.centerColor == goalSpriteManager.leftColor)
@@ -56,6 +55,8 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score: " + totalScore.ToString();
 
         score = 0;
+
+        gameOverManager.hasPoison = false;
     }
 
 }
