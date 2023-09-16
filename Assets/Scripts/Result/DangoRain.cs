@@ -12,10 +12,12 @@ public class DangoRain : MonoBehaviour
     private float totalScore;
     private int scoreThereshold = 500;  // 500点以上で落ちてくる
 
+    private SoundManager soundManager;
+
     // Start is called before the first frame update
     private void Start()
     {
-        Debug.Log(ScoreManager.totalScore);
+        soundManager = SoundManager.Instance;
 
         totalScore = ScoreManager.totalScore;   // ゲーム終了時のスコアを取得
         if (totalScore >= scoreThereshold)
@@ -26,8 +28,6 @@ public class DangoRain : MonoBehaviour
         {
             ScoreReset();
         }
-
-        Debug.Log(totalScore);
     }
 
     private IEnumerator DropDangos()
@@ -45,6 +45,8 @@ public class DangoRain : MonoBehaviour
 
                 // 生成する団子の位置をランダムに決定
                 Vector3 randomSpawnPosition = new Vector3(Random.Range(-1f, 1f), spawnPoint.position.y, spawnPoint.position.z);
+
+                soundManager.seManager.PlayOneShot(soundManager.generateMiddle);
 
                 // 団子を生成
                 GameObject dango = Instantiate(dangoPrefabs[randomDangoIndex], randomSpawnPosition, Quaternion.identity);
