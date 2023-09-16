@@ -20,6 +20,8 @@ public class DangoRain : MonoBehaviour
         soundManager = SoundManager.Instance;
 
         totalScore = ScoreManager.totalScore;   // ゲーム終了時のスコアを取得
+
+        totalScore = 1000;  // テスト用
         if (totalScore >= scoreThereshold)
         {
             StartCoroutine(DropDangos());
@@ -64,12 +66,14 @@ public class DangoRain : MonoBehaviour
             yield return new WaitForSeconds(delay); // delay秒待つ
         }
 
-        ScoreReset();
+        StartCoroutine(ScoreReset());
 
     }
 
-    private void ScoreReset()
+    private IEnumerator ScoreReset()
     {
+        yield return new WaitForSeconds(1.0f);  // 1秒待つ
+
         scoreDisplay.ShowScore(totalScore);    // スコアを表示
 
         ScoreManager.totalScore = 0; // スコアをリセット

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Threading.Tasks;
 using DG.Tweening;
 
 public class ScoreDisplay : MonoBehaviour
@@ -25,13 +24,10 @@ public class ScoreDisplay : MonoBehaviour
         
     }
 
-    public async void ShowScore (float Score)
+    public void ShowScore (float Score)
     {
-        await Task.Delay(1000); // 1秒待つ
-        
         TextMeshProUGUI scoreText = this.scoreText.GetComponent<TextMeshProUGUI>();
         scoreText.text = "スコア: " + Score.ToString();
-        //scoreText.transform.DOMove(0, 150, 0, scaleDuration);
 
         ButtonDisplay.ShowButtons();
     }
