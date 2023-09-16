@@ -18,10 +18,15 @@ public class DangoRain : MonoBehaviour
     {
         scoreManager = new ScoreManager();
         totalScore = scoreManager.totalScore;   // ゲーム終了時のスコアを取得
-        totalScore = 10000;   // テスト用にスコアを500に設定
+        totalScore = 200;   // テスト用にスコアを500に設定
         if (totalScore >= scoreThereshold)
         {
             StartDangoRain();
+        }
+        else
+        {
+            // スコア500未満
+            scoreDisplay.ShowScore(totalScore);    // スコアを表示
         }
     }
 
