@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seManager: {fileID: 7479450200102754220}
-  decide: {fileID: 8300000, guid: 6f8a30948d75d944eaf0065c9095522a, type: 3}
-  countdown: {fileID: 8300000, guid: 10d489c7819752f44adca5e9c2d639b5, type: 3}
-  start: {fileID: 8300000, guid: 1c17f1c0ed284c248a6ad24c2bb49fb0, type: 3}
+  decide: {fileID: 8300000, guid: a68a6f820daabca43a398562fea6bd83, type: 3}
+  countdown: {fileID: 8300000, guid: cc8aa59095d157247b487e0a0b03c7c7, type: 3}
+  start: {fileID: 8300000, guid: 4fa4e1fe2c322944196e28393faaf4cf, type: 3}
   dustBox: {fileID: 8300000, guid: dc05aa618113c6c4ea008329906623c1, type: 3}
   eat: {fileID: 8300000, guid: 459ace6a59e36b44d951999cd0759320, type: 3}
   filter: {fileID: 8300000, guid: e112acdf862acb64f94d7e3c417889d2, type: 3}

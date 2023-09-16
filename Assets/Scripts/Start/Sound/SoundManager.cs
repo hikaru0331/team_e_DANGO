@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class SoundManager : MonoBehaviour
 {
@@ -41,6 +42,4 @@ public class SoundManager : MonoBehaviour
     {
         get { return instance; }
     }
-
-
 }

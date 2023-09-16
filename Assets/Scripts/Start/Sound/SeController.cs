@@ -12,16 +12,15 @@ public class SeController : MonoBehaviour
         soundManager = SoundManager.Instance;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnClickButton()
     {
         soundManager.seManager.PlayOneShot(soundManager.decide);
         Debug.Log("クリックされました");
+    }
+
+    public void OptionSeSoundPlay()
+    {
+        soundManager.seManager.PlayOneShot(soundManager.decide);
     }
 
     public void PlayCountdown()
