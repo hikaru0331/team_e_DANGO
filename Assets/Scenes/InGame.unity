@@ -1876,11 +1876,11 @@ PrefabInstance:
     - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
       propertyPath: generateLow
       value: 
-      objectReference: {fileID: 8300000, guid: cd1c2657c0c42a34c8a43e70dec7e1ed, type: 3}
+      objectReference: {fileID: 8300000, guid: 44d400c9dd78e7a4a90ffafa06d0e5e9, type: 3}
     - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
       propertyPath: generateHigh
       value: 
-      objectReference: {fileID: 8300000, guid: 5f33db75e2f78e447b556712be084bc2, type: 3}
+      objectReference: {fileID: 8300000, guid: ee3528a01bd8aa7488ee412dbb6f2294, type: 3}
     - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
       propertyPath: generateMiddle
       value: 
