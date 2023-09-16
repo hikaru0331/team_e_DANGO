@@ -107,7 +107,7 @@ MonoBehaviour:
   bgm: {fileID: 8300000, guid: b2b89cb25a2270846958207c667e1329, type: 3}
   bgm_ingame: {fileID: 8300000, guid: 2de7f861c78f0fc43bb58d9f9ab7b7e2, type: 3}
   bgm_result: {fileID: 8300000, guid: af8c4985874683743aadc4205b162eca, type: 3}
-  bgm_fever: {fileID: 8300000, guid: 236cb10a19de4ca4d82ae855240fce53, type: 3}
+  bgm_fever: {fileID: 8300000, guid: fca3cfaaef1e18d438321efe2412afed, type: 3}
 --- !u!82 &7479450199304066540
 AudioSource:
   m_ObjectHideFlags: 0
