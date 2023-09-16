@@ -41,6 +41,8 @@ public class FilterRed : Filter
 
     protected override void ChangeDangoColor()
     {
+        soundManager.seManager.PlayOneShot(soundManager.filter);
+
         //G‚ê‚Ä‚«‚½ƒ_ƒ“ƒS‚Ì‘®«‚É‰‚¶‚Äê‡•ª‚¯
         switch (dangoAttribute)
         {

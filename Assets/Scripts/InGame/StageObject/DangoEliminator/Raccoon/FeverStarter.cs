@@ -16,6 +16,9 @@ public class FeverStarter : MonoBehaviour
     [SerializeField] private GameObject dangoLotteryObj;
     private DangoLottery dangoLottery;
 
+    private GameObject bgmControllerObj;
+    private BgmController bgmController;
+
     private void Start()
     {
         raccoonCollider = GetComponent<CapsuleCollider2D>();
@@ -70,11 +73,16 @@ public class FeverStarter : MonoBehaviour
 
     private void FeverSet()
     {
+        bgmControllerObj = GameObject.Find("BgmManager");
+        bgmController = bgmControllerObj.GetComponent<BgmController>();
+        bgmController.FeverBgmStart();
+
         //フィーバー移行時の演出
         dangoLottery.FeverDictionary();
 
         FeverTimerController.isFever = true;
 
+        bgmController.Invoke("FeverBgmEnd", 30.0f);
         dangoLottery.Invoke("InitializeDictionary", 30.0f);
     }
 }

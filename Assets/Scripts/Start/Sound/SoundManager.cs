@@ -15,6 +15,14 @@ public class SoundManager : MonoBehaviour
     public AudioClip decide;
     public AudioClip countdown;
     public AudioClip start;
+    public AudioClip dustBox;
+    public AudioClip eat;
+    public AudioClip filter;
+    public AudioClip gameOver;
+    public AudioClip generateHigh;
+    public AudioClip generateLow;
+    public AudioClip generateMiddle;
+    public AudioClip raccoon;
 
     private static SoundManager instance;
 
