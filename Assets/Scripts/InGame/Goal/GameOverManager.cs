@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -31,8 +32,6 @@ public class GameOverManager : MonoBehaviour
             thirdLife.sprite = emptyHeart;
             GameOver();
         }
-            
-        hasPoison = false;
     }
 
     private void GameOver()
@@ -50,12 +49,11 @@ public class GameOverManager : MonoBehaviour
 
     private void Update()
     {
-        if (gameOverCanvas == true)
+        if (gameOverCanvas.activeSelf == true)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                //ここにリザルト画面をロードするメソッド
-                Debug.Log("LoadResult");
+                SceneManager.LoadScene("Result");
             }
         }
         

@@ -10,7 +10,7 @@ public class DangoGenerator : MonoBehaviour
     //’cŽq¶¬‚É‚©‚©‚í‚é•Ï”
     [System.NonSerialized] public GameObject dango;
     private float timer;
-    public float interval;
+    [System.NonSerialized] public static float dangoInterval = 2.0f;
     private GameObject generatedDango;
 
     //RabitAnimatorƒNƒ‰ƒX‚ÌŽæ“¾
@@ -31,10 +31,9 @@ public class DangoGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         timer += Time.deltaTime;
 
-        if (timer >= interval)
+        if (timer >= dangoInterval)
         {
             timer = 0;
 

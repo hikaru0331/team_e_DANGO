@@ -17,5 +17,5 @@ public class DangoW : MonoBehaviour, IDangoInfo
     public string Color { get; set; } = "White";
     public string Attribute { get; } = "Normal";
 
-    public int Point { get; set; } = 10;
+    public int Point { get; set; } = 100;
 }

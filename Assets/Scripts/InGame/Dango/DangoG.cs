@@ -17,5 +17,5 @@ public class DangoG : MonoBehaviour, IDangoInfo
     public string Color { get; set; } = "Green";
     public string Attribute { get; } = "Normal";
 
-    public int Point { get; set; } = 10;
+    public int Point { get; set; } = 100;
 }

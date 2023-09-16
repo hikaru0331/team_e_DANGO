@@ -6,7 +6,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     private float score;
-    [System.NonSerialized] public float totalScore;
+    [System.NonSerialized] public static float totalScore;
 
     [SerializeField] private TMP_Text scoreText;
 
@@ -55,6 +55,8 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score: " + totalScore.ToString();
 
         score = 0;
+
+        gameOverManager.hasPoison = false;
     }
 
 }

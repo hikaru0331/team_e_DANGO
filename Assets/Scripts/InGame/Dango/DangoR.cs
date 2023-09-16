@@ -17,5 +17,5 @@ public class DangoR : MonoBehaviour, IDangoInfo
     public string Color { get; set; } = "Red";
     public string Attribute { get; } = "Normal";
 
-    public int Point { get; set; } = 10;
+    public int Point { get; set; } = 100;
 }

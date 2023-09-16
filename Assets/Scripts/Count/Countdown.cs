@@ -51,7 +51,7 @@ public class Countdown : MonoBehaviour
 
         // 1秒待ってからシーン遷移
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("test");
+        SceneManager.LoadScene("InGame");
 
     }
 }
