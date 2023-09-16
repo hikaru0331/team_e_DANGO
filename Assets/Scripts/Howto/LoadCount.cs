@@ -7,6 +7,7 @@ public class LoadCount : MonoBehaviour
 {
     public GameObject Howto1;
     public GameObject Howto2;
+    public GameObject Howto3;
 
     int count = 0;
 
@@ -29,6 +30,13 @@ public class LoadCount : MonoBehaviour
         // 遊び方画像変更
         Howto1.SetActive(false);
         Howto2.SetActive(true);
+        count++;
+      }
+      else if(count == 1)
+      {
+        // 遊び方画像変更
+        Howto2.SetActive(false);
+        Howto3.SetActive(true);
         count++;
       }
       else
