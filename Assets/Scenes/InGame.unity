@@ -554,6 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generatePosition: {fileID: 505347254}
   nextDangoObj: {fileID: 874879062}
+  soundManagerObj: {fileID: 2070905777}
 --- !u!114 &474125248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1852,6 +1853,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+      propertyPath: eat
+      value: 
+      objectReference: {fileID: 8300000, guid: 459ace6a59e36b44d951999cd0759320, type: 3}
+    - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+      propertyPath: filter
+      value: 
+      objectReference: {fileID: 8300000, guid: e112acdf862acb64f94d7e3c417889d2, type: 3}
+    - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+      propertyPath: dustBox
+      value: 
+      objectReference: {fileID: 8300000, guid: dc05aa618113c6c4ea008329906623c1, type: 3}
+    - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+      propertyPath: raccoon
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e923b25550f50343ae1fc73443e54fb, type: 3}
+    - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 8300000, guid: a31e793abdc24cd44b56c24f0ee3ff06, type: 3}
+    - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+      propertyPath: generateLow
+      value: 
+      objectReference: {fileID: 8300000, guid: cd1c2657c0c42a34c8a43e70dec7e1ed, type: 3}
+    - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+      propertyPath: generateHigh
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f33db75e2f78e447b556712be084bc2, type: 3}
+    - target: {fileID: 7479450199075061626, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+      propertyPath: generateMiddle
+      value: 
+      objectReference: {fileID: 8300000, guid: a2aa6ca78032b8548b48d550efcc79dd, type: 3}
     - target: {fileID: 7479450199075061627, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3883,6 +3916,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3834234385189078910, guid: f81e6d05a2f465d439b836d08b185ad5, type: 3}
   m_PrefabInstance: {fileID: 3834234384496872359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2070905777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7479450199075061621, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+  m_PrefabInstance: {fileID: 1135723090}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2072022207 stripped
 Transform:

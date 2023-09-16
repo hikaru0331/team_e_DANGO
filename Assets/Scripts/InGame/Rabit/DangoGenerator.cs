@@ -20,12 +20,17 @@ public class DangoGenerator : MonoBehaviour
     [SerializeField] private GameObject nextDangoObj;
     private NextDango nextDango;
 
+    [SerializeField] private GameObject soundManagerObj;
+    private SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
         rabitAnimator = GetComponent<RabitAnimator>();
 
         nextDango = nextDangoObj.GetComponent<NextDango>();
+
+        soundManager = soundManagerObj.GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
@@ -45,6 +50,25 @@ public class DangoGenerator : MonoBehaviour
             dango = nextDango.nextDango;
 
             nextDango.ChooseNextDango();
+
+            IDangoInfo dangoInfo = dango.GetComponent<IDangoInfo>();
+
+            switch(dangoInfo.Attribute)
+            {
+                case "Normal":
+                    soundManager.seManager.PlayOneShot(soundManager.generateMiddle);
+                    break;
+
+                case "Rabit":
+                    soundManager.seManager.PlayOneShot(soundManager.generateHigh);
+                    break;
+
+                case "Poison":
+                    soundManager.seManager.PlayOneShot(soundManager.generateLow);
+                    break;
+
+            }
+                
 
             //É_ÉìÉSê∂ê¨
             generatedDango = Instantiate(dango, generatePosition.gameObject.transform.position, Quaternion.identity);
