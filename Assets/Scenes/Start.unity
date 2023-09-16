@@ -1998,6 +1998,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479450199304066547, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
+      propertyPath: bgm_fever
+      value: 
+      objectReference: {fileID: 8300000, guid: 236cb10a19de4ca4d82ae855240fce53, type: 3}
+    - target: {fileID: 7479450199304066547, guid: eb3b97d0b7192144eac1b5b7c1adce5f, type: 3}
       propertyPath: bgm_result
       value: 
       objectReference: {fileID: 8300000, guid: fca3cfaaef1e18d438321efe2412afed, type: 3}
