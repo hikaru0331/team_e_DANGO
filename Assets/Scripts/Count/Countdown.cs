@@ -25,6 +25,9 @@ public class Countdown : MonoBehaviour
 
     IEnumerator CountdownCoroutine()
     {
+        // 0.5秒待ってからカウントダウン開始
+        yield return new WaitForSeconds(0.5f);
+        
         // 3秒カウントダウン
         
         counttext.text = "3";   // 3を表示

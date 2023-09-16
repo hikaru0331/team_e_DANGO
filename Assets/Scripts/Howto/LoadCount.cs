@@ -42,6 +42,15 @@ public class LoadCount : MonoBehaviour
       else
       {
         SceneManager.LoadScene("Count");
+        // 0.5秒待ってからシーン遷移
+        //StartCoroutine(CountdownCoroutine());
       }
     }
+
+    IEnumerator CountdownCoroutine()
+    {
+      yield return new WaitForSeconds(0.5f);
+      SceneManager.LoadScene("Count");
+    }
+
 }
