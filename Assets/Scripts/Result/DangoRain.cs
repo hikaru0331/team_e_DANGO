@@ -10,7 +10,7 @@ public class DangoRain : MonoBehaviour
 
     private float fallSpeed = 2f;
     private float totalScore;
-    private int scoreThereshold = 500;  // 500点以上で落ちてくる
+    private int scoreThereshold = 1000;  // 500点以上で落ちてくる
 
     private SoundManager soundManager;
 
