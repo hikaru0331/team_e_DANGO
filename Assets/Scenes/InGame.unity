@@ -2193,7 +2193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1350650382
 Transform:
   m_ObjectHideFlags: 0
@@ -2313,7 +2313,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dangoLotteryObj: {fileID: 518724358}
-  gameOverCanvas: {fileID: 1896780749}
 --- !u!114 &1350650387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4311,7 +4310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6429315821038497246, guid: 3810a43ea9ec89d458701a3db487ddf3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3810a43ea9ec89d458701a3db487ddf3, type: 3}

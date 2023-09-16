@@ -51,7 +51,7 @@ public class DangoLottery : MonoBehaviour
         probability.Add(dangos[2], 8.33f);
 
         probability.Add(dangos[3], 23.33f);
-        probability.Add(dangos[4], 100000f);
+        probability.Add(dangos[4], 1.66f);
         probability.Add(dangos[5], 8.33f);
 
         probability.Add(dangos[6], 23.33f);
