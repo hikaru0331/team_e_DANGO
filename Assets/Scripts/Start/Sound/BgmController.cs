@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class BgmController : MonoBehaviour
 {
-    private AudioSource bgmManager;
+    public AudioSource bgmManager;
     public AudioClip bgm;
     public AudioClip bgm_ingame;
     public AudioClip bgm_result;
+    public AudioClip bgm_fever;
     private string beforeScene;
     
     // Start is called before the first frame update
@@ -23,12 +24,6 @@ public class BgmController : MonoBehaviour
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
     {      
         //シーンがどう変わったかで判定
@@ -39,14 +34,14 @@ public class BgmController : MonoBehaviour
         }
         
         // Countからingameへ
-        if (beforeScene == "Count" && nextScene.name == "test")
+        if (beforeScene == "Count" && nextScene.name == "InGame")
         {
             bgmManager.clip = bgm_ingame; // BGMを切り替える
             bgmManager.Play();
         }
 
         // ingameからResultへ
-        if (beforeScene == "test" && nextScene.name == "Result")
+        if (beforeScene == "InGame" && nextScene.name == "Result")
         {
             bgmManager.Stop();
             bgmManager.clip = bgm_result;
@@ -57,11 +52,27 @@ public class BgmController : MonoBehaviour
         if (beforeScene == "Result" && nextScene.name == "Count")
         {
             bgmManager.Stop();
-            bgmManager.clip = bgm_ingame;
-            bgmManager.Play();
         }
 
         //遷移後のシーン名を「１つ前のシーン名」として保持
         beforeScene = nextScene.name;
     }
+
+    public void FeverBgmStart()
+    {
+        bgmManager.Stop();
+        bgmManager.clip = bgm_fever;
+        bgmManager.Play();
+    }
+
+    public void FeverBgmEnd()
+    {
+        if (!GameOverManager.isGameOver)
+        {
+            bgmManager.Stop();
+            bgmManager.clip = bgm_ingame;
+            bgmManager.Play();
+        }
+    }
+
 }

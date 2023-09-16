@@ -10,7 +10,7 @@ public class DangoGenerator : MonoBehaviour
     //’cq¶¬‚É‚©‚©‚í‚é•Ï”
     [System.NonSerialized] public GameObject dango;
     private float timer;
-    [System.NonSerialized] public static float dangoInterval = 2.0f;
+    [System.NonSerialized] public static float dangoInterval = 1.0f;
     private GameObject generatedDango;
 
     //RabitAnimatorƒNƒ‰ƒX‚Ìæ“¾
@@ -20,7 +20,6 @@ public class DangoGenerator : MonoBehaviour
     [SerializeField] private GameObject nextDangoObj;
     private NextDango nextDango;
 
-    [SerializeField] private GameObject soundManagerObj;
     private SoundManager soundManager;
 
     // Start is called before the first frame update
@@ -30,7 +29,7 @@ public class DangoGenerator : MonoBehaviour
 
         nextDango = nextDangoObj.GetComponent<NextDango>();
 
-        soundManager = soundManagerObj.GetComponent<SoundManager>();
+        soundManager = SoundManager.Instance;
     }
 
     // Update is called once per frame
