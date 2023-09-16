@@ -61,6 +61,14 @@ public class BgmController : MonoBehaviour
             bgmManager.Play();
         }
 
+        // ResultからStartへ
+        if (beforeScene == "Result" && nextScene.name == "Start")
+        {
+            bgmManager.Stop();
+            bgmManager.clip = bgm;
+            bgmManager.Play();
+        }
+
         //遷移後のシーン名を「１つ前のシーン名」として保持
         beforeScene = nextScene.name;
     }
