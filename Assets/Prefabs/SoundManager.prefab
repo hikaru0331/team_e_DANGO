@@ -50,6 +50,14 @@ MonoBehaviour:
   decide: {fileID: 8300000, guid: 6f8a30948d75d944eaf0065c9095522a, type: 3}
   countdown: {fileID: 8300000, guid: 10d489c7819752f44adca5e9c2d639b5, type: 3}
   start: {fileID: 8300000, guid: 1c17f1c0ed284c248a6ad24c2bb49fb0, type: 3}
+  dustBox: {fileID: 8300000, guid: dc05aa618113c6c4ea008329906623c1, type: 3}
+  eat: {fileID: 8300000, guid: 459ace6a59e36b44d951999cd0759320, type: 3}
+  filter: {fileID: 8300000, guid: e112acdf862acb64f94d7e3c417889d2, type: 3}
+  gameOver: {fileID: 8300000, guid: a31e793abdc24cd44b56c24f0ee3ff06, type: 3}
+  generateHigh: {fileID: 8300000, guid: ee3528a01bd8aa7488ee412dbb6f2294, type: 3}
+  generateLow: {fileID: 8300000, guid: 44d400c9dd78e7a4a90ffafa06d0e5e9, type: 3}
+  generateMiddle: {fileID: 8300000, guid: a2aa6ca78032b8548b48d550efcc79dd, type: 3}
+  raccoon: {fileID: 8300000, guid: 0e923b25550f50343ae1fc73443e54fb, type: 3}
 --- !u!1 &7479450199304066543
 GameObject:
   m_ObjectHideFlags: 0

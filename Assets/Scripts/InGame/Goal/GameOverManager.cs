@@ -17,6 +17,8 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private GameObject gameOverCanvas;
     [SerializeField] private GameObject rabit;
 
+    private SoundManager soundManager;
+
     public void PoisonChecker()
     {
         if(firstLife.sprite != emptyHeart)
@@ -36,6 +38,9 @@ public class GameOverManager : MonoBehaviour
 
     private void GameOver()
     {
+        soundManager = SoundManager.Instance;
+        soundManager.seManager.PlayOneShot(soundManager.gameOver);
+
         //GameOverCanvasのアクティブ化
         gameOverCanvas.SetActive(true);
 
@@ -55,7 +60,6 @@ public class GameOverManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Result");
             }
-        }
-        
+        }        
     }
 }

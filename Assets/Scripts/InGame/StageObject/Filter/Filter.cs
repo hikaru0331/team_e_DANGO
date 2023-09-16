@@ -9,6 +9,8 @@ public class Filter : MonoBehaviour
     //親オブジェクトのTransformを入れる変数
     private Transform parentTransform;
 
+    public SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,8 @@ public class Filter : MonoBehaviour
         parentTransform.DOLocalMoveX(moveDistination, moveSpeed)
            .SetEase(Ease.InOutQuad)
            .SetLoops(-1, LoopType.Yoyo);
+
+        soundManager = SoundManager.Instance;
     }
 
     //Filter３種に入れる抽象メソッド

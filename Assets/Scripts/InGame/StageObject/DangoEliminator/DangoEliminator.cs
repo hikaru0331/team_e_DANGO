@@ -19,6 +19,8 @@ public class DangoEliminator : MonoBehaviour
     private float timer;
     private float raccoonInterval;
 
+    private SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +38,15 @@ public class DangoEliminator : MonoBehaviour
 
         //タヌキ生成までの時間をランダムで決定
         raccoonInterval = Random.Range(45.0f, 120.0f);
+
+        soundManager = SoundManager.Instance;
     }
 
     //タヌキをアクティブにするメソッド
     private void RaccoonSet()
     {
+        soundManager.seManager.PlayOneShot(soundManager.raccoon);
+
         dustBox.gameObject.SetActive(false);
         raccoon.gameObject.SetActive(true);
 
@@ -52,6 +58,8 @@ public class DangoEliminator : MonoBehaviour
     //ゴミ箱をアクティブにするメソッド
     public void DustBoxSet()
     {
+        soundManager.seManager.PlayOneShot(soundManager.raccoon);
+
         raccoon.gameObject.SetActive(false);
         dustBox.gameObject.SetActive(true);
 

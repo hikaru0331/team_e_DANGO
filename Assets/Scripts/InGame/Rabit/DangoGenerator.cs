@@ -66,10 +66,8 @@ public class DangoGenerator : MonoBehaviour
                 case "Poison":
                     soundManager.seManager.PlayOneShot(soundManager.generateLow);
                     break;
-
             }
                 
-
             //É_ÉìÉSê∂ê¨
             generatedDango = Instantiate(dango, generatePosition.gameObject.transform.position, Quaternion.identity);
 
