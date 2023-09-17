@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading.Tasks;
 
 public class ButtonDisplay : MonoBehaviour
 {
@@ -20,9 +19,12 @@ public class ButtonDisplay : MonoBehaviour
         
     }
 
-    public async void ShowButtons()
+    public IEnumerator ShowButtons()
     {
-        await Task.Delay(1000); // 1秒待つ
+        // デバックログ
+        Debug.Log("ShowButtons");
+        // 1秒待つ
+        yield return new WaitForSeconds(1.0f);
 
         buttonRetry.SetActive(true);
         buttonEnd.SetActive(true);
