@@ -27,7 +27,7 @@ public class DangoRain : MonoBehaviour
         }
         else
         {
-            ScoreReset();
+            StartCoroutine(ScoreReset());
         }
     }
 

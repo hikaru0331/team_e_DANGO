@@ -968,7 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1579586089}
   scaleDuration: 0.5
-  ButtonDisplay: {fileID: 28784612}
+  buttonDisplay: {fileID: 28784612}
 --- !u!4 &1151617377
 Transform:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class ScoreDisplay : MonoBehaviour
     
     public GameObject scoreText;
     public float scaleDuration = 0.5f;
-    public ButtonDisplay ButtonDisplay; // ボタン表示用のスクリプト
+    public ButtonDisplay buttonDisplay; // ボタン表示用のスクリプト
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +26,10 @@ public class ScoreDisplay : MonoBehaviour
 
     public void ShowScore (float Score)
     {
+        Debug.Log("ShowScore");
         TextMeshProUGUI scoreText = this.scoreText.GetComponent<TextMeshProUGUI>();
         scoreText.text = "スコア: " + Score.ToString();
 
-        ButtonDisplay.ShowButtons();
+        StartCoroutine(buttonDisplay.ShowButtons());
     }
 }
