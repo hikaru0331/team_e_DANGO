@@ -21,7 +21,6 @@ public class DangoRain : MonoBehaviour
 
         totalScore = ScoreManager.totalScore;   // ゲーム終了時のスコアを取得
 
-        totalScore = 1000;  // テスト用
         if (totalScore >= scoreThereshold)
         {
             StartCoroutine(DropDangos());
