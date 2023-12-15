@@ -68,9 +68,12 @@ public class BgmController : MonoBehaviour
 
     public void FeverBgmStart()
     {
-        bgmManager.Stop();
-        bgmManager.clip = bgm_fever;
-        bgmManager.Play();
+        if (!GameOverManager.isGameOver)
+        {
+            bgmManager.Stop();
+            bgmManager.clip = bgm_fever;
+            bgmManager.Play();
+        }            
     }
 
     public void FeverBgmEnd()

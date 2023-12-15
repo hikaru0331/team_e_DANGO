@@ -61,6 +61,7 @@ public class GameOverManager : MonoBehaviour
         dangoGenerator.enabled = false;
 
         isGameOver = true;
+        FeverTimerController.isFever = false;
 
     }
 
