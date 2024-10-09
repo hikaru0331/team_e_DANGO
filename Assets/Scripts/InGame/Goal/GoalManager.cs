@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -18,20 +18,19 @@ public class GoalManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //ƒCƒ“ƒ^[ƒtƒF[ƒX‚Æ‚µ‚Ä—pˆÓ‚µ‚½ƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‰»
-        //ƒ_ƒ“ƒS‚É’¼ÚƒAƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚È‚¢‚ªAƒAƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚éƒNƒ‰ƒX(DangoG‚È‚Ç)‚ÌeƒNƒ‰ƒX‚Ì‚½‚ßæ“¾‰Â”\
+        //ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã¨ã—ã¦ç”¨æ„ã—ãŸã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–
         if (collision.gameObject.TryGetComponent<IDangoInfo>(out var dangoInfo))
         {
-            //“Åƒ_ƒ“ƒS‚¾‚Á‚½‚Æ‚«‚ÉAƒ‰ƒCƒt‚ğŒ¸‚ç‚·‚½‚ß‚Ì•Ï”‚ğtrue‚É•ÏX
+            //æ¯’ãƒ€ãƒ³ã‚´ã ã£ãŸã¨ãã«ã€ãƒ©ã‚¤ãƒ•ã‚’æ¸›ã‚‰ã™ãŸã‚ã®å¤‰æ•°ã‚’trueã«å¤‰æ›´
             if (dangoInfo.Attribute == "Poison")
             {
                 gameOverManager.hasPoison = true;
             }
 
-            //ScoreManagerƒNƒ‰ƒX‚ÌƒXƒRƒAŒvZƒƒ\ƒbƒh‚ÉƒXƒRƒA‚ğ“n‚·
+            //ScoreManagerã‚¯ãƒ©ã‚¹ã®ã‚¹ã‚³ã‚¢è¨ˆç®—ãƒ¡ã‚½ãƒƒãƒ‰ã«ã‚¹ã‚³ã‚¢ã‚’æ¸¡ã™
             scoreManager.PointCalculator(dangoInfo.Point);
 
-            //SpriteManagerƒNƒ‰ƒX‚ÌƒXƒvƒ‰ƒCƒg•ÏŠ·ƒƒ\ƒbƒh‚ÉƒXƒRƒA‚ğ“n‚·
+            //SpriteManagerã‚¯ãƒ©ã‚¹ã®ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆå¤‰æ›ãƒ¡ã‚½ãƒƒãƒ‰ã«ã‚¹ã‚³ã‚¢ã‚’æ¸¡ã™
             goalSpriteManager.SpriteChanger(dangoInfo.Sprite, dangoInfo.Color);
                         
             Destroy(collision.gameObject);
